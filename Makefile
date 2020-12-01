@@ -6,7 +6,7 @@
 #    By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/03 09:44:44 by jnivala           #+#    #+#              #
-#    Updated: 2020/12/01 15:40:41 by jnivala          ###   ########.fr        #
+#    Updated: 2020/12/01 16:13:05 by jnivala          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,11 +83,14 @@ SRC_LIST = \
 	frl_manipulate_y.c\
 	frl_translate_coordinates.c\
 
-HEADERS = $(addprefix $(source_dir),\
+HEADERS = $(addprefix $S,\
 		frl.h\
 		g42.h\
 	)
+SRC = $(addprefix $S, $(SRC_LIST))
 OBJ = $(SRC:$S%=$O%.o)
+RM = /bin/rm -f
+RMDIR = /bin/rmdir
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 INCLUDES = $(addprefix -I,$(include_dirs))
@@ -96,13 +99,12 @@ INCLUDES = $(addprefix -I,$(include_dirs))
 
 all: $(NAME)
 
-$(NAME): $(LIBFT) $(MLX) $(objects_dir) $(OBJ)
-	$(CC) $(OBJ) -Lmlx_linux -lmlx -L$(INCLIB) -Llibft/ -lft -Imlx_linux -lXext -lX11 -lm -lz -o $@
+$O:
+	mkdir -p $@
 
-$(objects_dir):
-	mkdir -p $(objects_dir)
+$(OBJ): | $O
 
-$(objects_dir)%.o: $(source_dir)%.c $(HEADERS)
+$(OBJ): $O%.o: $S% $(HEADERS)
 	$(CC) $(CFLAGS) -c $(INCLUDES) $< -o $@
 
 $(LIBFT):
@@ -111,14 +113,21 @@ $(LIBFT):
 $(MLX):
 	make -C $(mlx_dir)
 
-clean:
+$(NAME): $(LIBFT) $(MLX) $(OBJ)
+	$(CC) $(OBJ) -Lmlx_linux -lmlx -L$(INCLIB) -Llibft/ -lft -Imlx_linux -lXext -lX11 -lm -lz -o $@
+
+cleanobj:
+	$(RM) $(wildcard $(OBJ))
+
+cleanobjdir: cleanobj
+	$(RMDIR) $O
+
+clean: cleanobjdir
 	make -C $(mlx_dir) clean
 	make -C $(libft_dir) clean
-	rm -rf $(objects_dir)
 
 fclean: clean
-	rm $(LIBFT)
-	rm -f $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
 
