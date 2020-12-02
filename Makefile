@@ -6,7 +6,7 @@
 #    By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/03 09:44:44 by jnivala           #+#    #+#              #
-#    Updated: 2020/12/01 16:13:05 by jnivala          ###   ########.fr        #
+#    Updated: 2020/12/01 16:16:40 by jnivala          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -92,7 +92,7 @@ OBJ = $(SRC:$S%=$O%.o)
 RM = /bin/rm -f
 RMDIR = /bin/rmdir
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 INCLUDES = $(addprefix -I,$(include_dirs))
 
 .PHONY: all clean fclean re debug
