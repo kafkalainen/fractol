@@ -5,9 +5,8 @@
 ![Points](points.png)
 
 ### Goal of the project
-• Software offers at least 3 different types of fractals
-	- Julia
-	- Mandelbrot
+
+• Software offers at least 3 different types of fractals - Julia - Mandelbrot
 • Julia set will vary only with the mouse. As for the other types of fractal,
 I used same logic in order to keep UI intuitive.
 • The mouse wheel zooms in and out, almost infinitely. This is the very principle of fractals.
@@ -22,12 +21,22 @@ The latest repository of the school's MinilibX can be found here. Note, that lat
 ![Example of the Mandelbrot](example.png)
 
 ### Features
+
 - Rotation.
 
+### To-do
+
+- Delete libft.a after make fclean.
+
 ### Reasonings
+
 - I use g42 prefix for project files that I deem usable in other projects and frl to be project specific prefix.
 - I created g42 struct coord to hold 3d coordinates as doubles, and copy it to proj, and then translate those coordinates to screen coordinates.
 
 ### Links
+
 - MinilibX documentation by Codam students [Link](https://harm-smits.github.io/42docs/libs/minilibx/getting_started.html#compilation-on-linux)
 - Neener's tutorial how to use MinilibX, and DDA algorithm. [Link](https://gontjarow.github.io/MiniLibX/)
+- Mandelbrot Plotting algorithms [Link](https://en.wikipedia.org/wiki/Plotting_algorithms_for_the_Mandelbrot_set)
+- C plotting algorithm [Link](https://jonisalonen.com/2013/lets-draw-the-mandelbrot-set/)
+- Linear interpolation [Link](https://en.wikipedia.org/wiki/Linear_interpolation))

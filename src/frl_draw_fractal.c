@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   frl_double_parser.c                                :+:      :+:    :+:   */
+/*   frl_draw_fractal.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/26 15:07:10 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/01 15:14:35 by jnivala          ###   ########.fr       */
+/*   Created: 2020/12/02 11:53:34 by jnivala           #+#    #+#             */
+/*   Updated: 2020/12/02 14:03:55 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
+#include "frl.h"
 
-double frl_double_parser(int begin, int end)
+void	frl_draw_fractal(t_data *data, int colour)
 {
-	int len;
-	double db;
-
-	db = (double)end;
-	len = ft_nb_len(end, 10);
-	while (len)
-	{
-		db = (double)db * 0.1;
-		len--;
-	}
-	db += (double)begin;
-	return (db);
+	//frl_draw_background(data);
+	frl_smooth_colouring(data);
+	frl_draw_menu(data, colour);
 }

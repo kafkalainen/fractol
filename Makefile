@@ -6,7 +6,7 @@
 #    By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/03 09:44:44 by jnivala           #+#    #+#              #
-#    Updated: 2020/12/01 16:16:40 by jnivala          ###   ########.fr        #
+#    Updated: 2020/12/02 14:02:47 by jnivala          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,32 +56,23 @@ SRC_LIST = \
 	g42_trgb_to_hex.c\
 	g42_c_grad.c\
 	g42_scale_y.c\
-	frl_handle_keypress.c\
-	frl_draw_wire.c\
-	frl_draw_line.c\
-	frl_idx.c\
-	frl_move_object.c\
-	frl_scale_object.c\
-	frl_rotate_object.c\
-	frl_double_parser.c\
-	frl_reset_object.c\
-	frl_iso_object.c\
-	frl_front_object.c\
-	frl_init_camera.c\
-	frl_init_view.c\
-	frl_init_vars.c\
-	frl_draw_menu.c\
+	g42_lerp.c\
+	frl_change_colour.c\
+	frl_clean.c\
+	frl_count_colour_scale.c\
+	frl_del_vars.c\
 	frl_draw_background.c\
+	frl_draw_fractal.c\
 	frl_draw_instructions_left.c\
 	frl_draw_instructions_right.c\
+	frl_draw_menu.c\
 	frl_draw_title.c\
-	frl_count_colour_scale.c\
 	frl_error.c\
-	frl_clean.c\
-	frl_del_vars.c\
-	frl_change_colour.c\
-	frl_manipulate_y.c\
-	frl_translate_coordinates.c\
+	frl_handle_keypress.c\
+	frl_idx.c\
+	frl_init_camera.c\
+	frl_init_vars.c\
+	frl_smooth_colouring.c\
 
 HEADERS = $(addprefix $S,\
 		frl.h\

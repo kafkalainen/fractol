@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 09:33:31 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/01 15:14:57 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/02 13:19:23 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ static int frl_return_next_colour(int colour)
 {
 	int i;
 	static int tab[] = {
-		TURQUOISE, PALETURQUOISE, PALEGREEN, LIMEGREEN,
+		HOTPINK, PALETURQUOISE, PALEGREEN, LIMEGREEN,
 		LIGHTBLUE, POWDERBLUE, LIGHTYELLOW, SANDYBROWN,
-		SNOW, ORANGE, HOTPINK, LIGHTPINK, MISTYROSE, VIOLETRED};
+		SNOW, ORANGE, TURQUOISE, LIGHTPINK, MISTYROSE };
 
 	i = 0;
 	while (i < 14)
@@ -43,7 +43,7 @@ int frl_change_colour(int keycode, t_vars *vars)
 	vars->data->addr = mlx_get_data_addr(vars->data->img, &vars->data->bpp,
 										 &vars->data->llen, &vars->data->endian);
 	vars->cur.colour = frl_return_next_colour(vars->cur.colour);
-	frl_draw_wire(vars->data, vars->map, vars->map->screen, vars->cur.colour);
+	//frl_draw_wire(vars->data, vars->map, vars->map->screen, vars->cur.colour);
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->data->img, 0, 0);
 	return (0);
 }
