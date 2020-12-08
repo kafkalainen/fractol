@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 08:32:27 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/08 10:59:24 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/08 14:45:25 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -267,12 +267,12 @@ typedef struct	s_vec3 {
 
 typedef struct	s_camera
 {
-	double		ang_x;
-	double		ang_y;
-	double		ang_z;
 	double		dist;
-	t_uv		offset;
+	t_vec3		offset;
 	int			colour;
+	double		time;
+	double		old_time;
+	double		frame;
 }				t_cam;
 
 typedef struct	s_map {
@@ -307,7 +307,6 @@ typedef struct	s_vars {
 	void		*mlx;
 	void		*win;
 	t_data		*data;
-	t_map		*map;
 	t_cam		cur;
 	char		*set;
 }				t_vars;

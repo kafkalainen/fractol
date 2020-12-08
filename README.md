@@ -20,15 +20,7 @@ The latest repository of the school's MinilibX can be found here. Note, that lat
 
 ![Example of the Mandelbrot](example.png)
 
-### Features
-
-- Rotation.
-
 ### To-do
-
-- Delete libft.a after make fclean.
-- 200 bytes of memoryleaks.
-- Fix the colour functions.
 
 ### Checklist
 
@@ -68,3 +60,5 @@ Bonus
 - Mandelbrot Plotting algorithms [Link](https://en.wikipedia.org/wiki/Plotting_algorithms_for_the_Mandelbrot_set)
 - C plotting algorithm [Link](https://jonisalonen.com/2013/lets-draw-the-mandelbrot-set/)
 - Linear interpolation [Link](https://en.wikipedia.org/wiki/Linear_interpolation))
+- Illianois University examples on pthread [Link](https://courses.engr.illinois.edu/cs241/fa2010/ppt/10-pthread-examples.pdf)
+- Lode's Computer Graphics tutorial is a must read, it holds basically everything you need to get the basics of fractals. [Link](https://lodev.org/cgtutor/juliamandelbrot.html)

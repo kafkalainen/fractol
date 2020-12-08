@@ -6,7 +6,7 @@
 #    By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/03 09:44:44 by jnivala           #+#    #+#              #
-#    Updated: 2020/12/08 11:05:28 by jnivala          ###   ########.fr        #
+#    Updated: 2020/12/08 18:40:45 by jnivala          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,7 +61,6 @@ SRC_LIST = \
 	g42_rgb_to_hsv.c\
 	g42_rgb_to_hex.c\
 	g42_get_colours.c\
-	frl_change_colour.c\
 	frl_clean.c\
 	frl_count_colour_scale.c\
 	frl_del_vars.c\
@@ -72,6 +71,7 @@ SRC_LIST = \
 	frl_draw_menu.c\
 	frl_draw_title.c\
 	frl_error.c\
+	frl_handle_buttonpress.c\
 	frl_handle_keypress.c\
 	frl_idx.c\
 	frl_init_camera.c\
@@ -81,6 +81,7 @@ SRC_LIST = \
 	frl_paint_current_fractal.c\
 	frl_move_fractal.c\
 	frl_colour_scheme.c\
+	frl_zoom_fractal.c\
 
 HEADERS = $(addprefix $S,\
 		frl.h\
@@ -91,7 +92,7 @@ OBJ = $(SRC:$S%=$O%.o)
 RM = /bin/rm -f
 RMDIR = /bin/rmdir
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror
 INCLUDES = $(addprefix -I,$(include_dirs))
 
 .PHONY: all clean fclean re debug

@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 16:32:21 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/04 16:39:33 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/08 18:18:55 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@
 #define RIGHT 65363
 #define UP 65362
 #define DOWN 65364
+#define ZOOM_IN 4
+#define ZOOM_OUT 5
 #define EXIT_SUCCESS 0
 #define EXIT_FAILURE 1
 #define INVALID_CHARACTERS 2
@@ -68,6 +70,8 @@ int		frl_error(char *message);
 
 int		frl_front_object(int keycode, t_vars *vars);
 
+int		frl_handle_buttonpress(int buttoncode, int x, int y, t_vars *vars);
+
 int		frl_handle_keypress(int keycode, t_vars *vars);
 
 size_t	frl_idx(size_t x, size_t y, t_map *map);
@@ -86,4 +90,5 @@ int		frl_move_fractal(int keycode, t_vars *vars);
 
 int		frl_colour_scheme(int i, int g, int b, int mode);
 
+int		frl_zoom_fractal(int buttoncode, t_vars *vars);
 #endif

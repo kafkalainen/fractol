@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 09:47:50 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/05 12:34:46 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/08 14:04:58 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static void	*frl_paint_area(void *args)
 		}
 		screen.v++;
 	}
-	pthread_exit(NULL);
+	return (NULL);
 }
 
 void		frl_paint_current_fractal(t_data *data, t_cam *cam, \
@@ -48,6 +48,7 @@ void (*f)(t_data*, t_uv, t_cam*))
 {
 	t_arg		args;
 	int			i;
+
 	args.tid = (pthread_t*)malloc(sizeof(pthread_t) * MAX_THREADS);
 	args.cam = cam;
 	args.data = data;
@@ -58,10 +59,7 @@ void (*f)(t_data*, t_uv, t_cam*))
 		pthread_create(&args.tid[i], NULL, &frl_paint_area, (void*)&args);
 		i++;
 	}
-	i = 0;
-	while (i < MAX_THREADS)
-	{
+	while (i--)
 		pthread_join(args.tid[i], NULL);
-		i++;
-	}
+	ft_memdel((void**)&args.tid);
 }

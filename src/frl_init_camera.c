@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 12:20:07 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/04 13:04:42 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/08 14:46:43 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 
 int		frl_init_camera(t_cam *cur)
 {
-	cur->ang_x = 0.0;
-	cur->ang_y = 0.0;
-	cur->ang_z = 0.0;
+	cur->old_time = 0.0;
+	cur->frame = 0.0;
+	cur->time = 0.0;
 	cur->dist = 1.0;
-	cur->offset.u = 0.0;
-	cur->offset.v = 0.0;
+	cur->offset.x = 0.0;
+	cur->offset.y = 0.0;
 	cur->colour = gray;
 	return (0);
 }

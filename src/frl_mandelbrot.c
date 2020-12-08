@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 11:30:09 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/04 15:50:39 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/08 14:45:43 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void		frl_mandelbrot(t_data *data, t_uv screen, t_cam *cam)
 	t_dual			new;
 	int				i;
 
-	c.re = (screen.u - WIN_WIDTH / 2.0) * (4.0 / WIN_WIDTH) + cam->offset.u;
-	c.im = (screen.v - WIN_HEIGHT / 2.0) * (4.0 / WIN_WIDTH) + cam->offset.v;
+	c.re = (screen.u - WIN_WIDTH / 2.0) * (4.0 / WIN_WIDTH) + cam->offset.x;
+	c.im = (screen.v - WIN_HEIGHT / 2.0) * (4.0 / WIN_WIDTH) + cam->offset.y;
 	i = 0;
 	new.one.re = 0;
 	new.one.im = 0;
