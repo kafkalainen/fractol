@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   frl_init_camera.c                                  :+:      :+:    :+:   */
+/*   g42_rgb_to_hex.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/27 12:20:07 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/04 13:04:42 by jnivala          ###   ########.fr       */
+/*   Created: 2020/10/29 08:52:24 by jnivala           #+#    #+#             */
+/*   Updated: 2020/12/03 17:52:43 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "frl.h"
-#include <stdlib.h>
+#include "g42.h"
 
-int		frl_init_camera(t_cam *cur)
+int		g42_rgb_to_hex(t_rgb rgb)
 {
-	cur->ang_x = 0.0;
-	cur->ang_y = 0.0;
-	cur->ang_z = 0.0;
-	cur->dist = 1.0;
-	cur->offset.u = 0.0;
-	cur->offset.v = 0.0;
-	cur->colour = gray;
-	return (0);
+	return ((int)rgb.r << 16 | (int)rgb.g << 8 | (int)rgb.b);
 }

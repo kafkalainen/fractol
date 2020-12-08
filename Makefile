@@ -6,7 +6,7 @@
 #    By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/03 09:44:44 by jnivala           #+#    #+#              #
-#    Updated: 2020/12/02 14:02:47 by jnivala          ###   ########.fr        #
+#    Updated: 2020/12/08 11:05:28 by jnivala          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,6 +57,10 @@ SRC_LIST = \
 	g42_c_grad.c\
 	g42_scale_y.c\
 	g42_lerp.c\
+	g42_hsv_to_rgb.c\
+	g42_rgb_to_hsv.c\
+	g42_rgb_to_hex.c\
+	g42_get_colours.c\
 	frl_change_colour.c\
 	frl_clean.c\
 	frl_count_colour_scale.c\
@@ -72,7 +76,11 @@ SRC_LIST = \
 	frl_idx.c\
 	frl_init_camera.c\
 	frl_init_vars.c\
-	frl_smooth_colouring.c\
+	frl_julia.c\
+	frl_mandelbrot.c\
+	frl_paint_current_fractal.c\
+	frl_move_fractal.c\
+	frl_colour_scheme.c\
 
 HEADERS = $(addprefix $S,\
 		frl.h\
@@ -105,7 +113,7 @@ $(MLX):
 	make -C $(mlx_dir)
 
 $(NAME): $(LIBFT) $(MLX) $(OBJ)
-	$(CC) $(OBJ) -Lmlx_linux -lmlx -L$(INCLIB) -Llibft/ -lft -Imlx_linux -lXext -lX11 -lm -lz -o $@
+	$(CC) $(OBJ) -Lmlx_linux -lmlx -L$(INCLIB) -Llibft/ -lft -Imlx_linux -lpthread -lXext -lX11 -lm -lz -o $@
 
 cleanobj:
 	$(RM) $(wildcard $(OBJ))
@@ -119,6 +127,7 @@ clean: cleanobjdir
 
 fclean: clean
 	$(RM) $(NAME)
+	$(RM) $(LIBFT)
 
 re: fclean all
 

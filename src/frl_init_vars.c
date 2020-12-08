@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 10:39:39 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/01 15:14:35 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/05 12:34:09 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ t_vars *frl_init_vars(void)
 	t_vars *vars;
 
 	if (!(vars = (t_vars *)malloc(sizeof(t_vars))))
-		return (NULL);
-	if (!(vars->map = (t_map *)malloc(sizeof(t_map))))
 		return (NULL);
 	if (!(vars->data = (t_data *)malloc(sizeof(t_data))))
 		return (NULL);

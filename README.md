@@ -27,6 +27,34 @@ The latest repository of the school's MinilibX can be found here. Note, that lat
 ### To-do
 
 - Delete libft.a after make fclean.
+- 200 bytes of memoryleaks.
+- Fix the colour functions.
+
+### Checklist
+
+- Norminette shows no errors
+- No forbidden function/library
+- No memory leaks
+- When the program runs, there is at least a graphic window.
+- ESC key exits properly the program.
+- There is visual evolution when using the mouse wheel.
+- Something happens visually in at least one of the implemented fractals when moving the mouse without clicking on it.
+  Julia
+- Set needs to evolve with moving the mouse around.
+- Zooming in and out.
+  Mandelbrot
+- Zooming in and out.
+  Additional fractals
+- Zooming in and out.
+
+Bonus
+
+- Zooming goes where the mouse pointer is.
+- It is possible to move around in the image by using arrowkeys. It also works with the zoom.
+- Colors need to be very beautiful, psychedelic or changing.
+- Several windows and different fractals at the same time.
+- Parallel or GPU computing.
+- Other features not listed here.
 
 ### Reasonings
 

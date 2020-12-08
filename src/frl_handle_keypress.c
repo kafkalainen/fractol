@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 08:43:38 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/02 12:09:45 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/03 17:58:13 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int frl_handle_keypress(int keycode, t_vars *vars)
 	// if (vars && (keycode == KEY_D || keycode == KEY_W || keycode == KEY_A || keycode == KEY_S ||
 	// 			 keycode == KEY_E || keycode == KEY_Q))
 	// 	frl_rotate_object(keycode, vars);
-	// if (vars && (keycode == DOWN || keycode == UP || keycode == LEFT || keycode == RIGHT))
-	// 	frl_move_object(keycode, vars);
+	if (vars && (keycode == DOWN || keycode == UP || keycode == LEFT || keycode == RIGHT))
+		frl_move_fractal(keycode, vars);
 	// if (vars && (keycode == KEY_1 || keycode == KEY_2))
 	// 	frl_scale_object(keycode, vars);
 	// if (vars && (keycode == KEY_R || keycode == KEY_H))

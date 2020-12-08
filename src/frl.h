@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 16:32:21 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/02 13:18:59 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/04 16:39:33 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,10 @@
 #define INVALID_CHARACTERS 2
 #define WIN_WIDTH 1920
 #define WIN_HEIGHT 1080
-#define MENU_HEIGHT 200
+#define MENU_HEIGHT 140
 #define BUFF_SIZE 1024
+#define MAX_ITER 1000
+#define MAX_THREADS 25
 #include "g42.h"
 #include <string.h>
 
@@ -52,7 +54,7 @@ char	*frl_del_vars(t_vars **vars);
 
 int		frl_draw_background(t_data *data);
 
-void	frl_draw_fractal(t_data *data, int colour);
+int		frl_draw_fractal(t_cam *cam, t_data *data, char *str);
 
 int		frl_draw_instructions_left(t_data *data, t_uv coord);
 
@@ -70,10 +72,18 @@ int		frl_handle_keypress(int keycode, t_vars *vars);
 
 size_t	frl_idx(size_t x, size_t y, t_map *map);
 
-int		frl_init_camera(t_cam *cam);
+int		frl_init_camera(t_cam *cur);
 
 t_vars	*frl_init_vars(void);
 
-void	frl_smooth_colouring(t_data *data);
+void	frl_paint_current_fractal(t_data *data, t_cam *cam, void (*f)(t_data*, t_uv, t_cam*));
+
+void	frl_mandelbrot(t_data *data, t_uv screen, t_cam *cam);
+
+void	frl_julia(t_data *data, t_uv screen, t_cam *cam);
+
+int		frl_move_fractal(int keycode, t_vars *vars);
+
+int		frl_colour_scheme(int i, int g, int b, int mode);
 
 #endif

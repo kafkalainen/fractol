@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 08:32:27 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/02 13:52:44 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/08 10:59:24 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,146 +74,154 @@
 # define COLORMAPCHANGEMASK (1L<<23)
 # define OWNERGRABBUTTONMASK (1L<<24)
 # define PI 3.14159265
-# define LIGHTPINK 0xFFB6C1
-# define PINK 0xFFC0CB
-# define CRIMSON 0xDC143C
-# define LAVENDERBLUSH 0xFFF0F5
-# define PALEVIOLETRED 0xDB7093
-# define HOTPINK 0xFF69B4
-# define DEEPPINK 0xFF1493
-# define MEDIUMVIOLETRED 0xC71585
-# define ORCHID 0xDA70D6
-# define THISTLE 0xD8BFD8
-# define PLUM 0xDDA0DD
-# define VIOLET 0xEE82EE
-# define FUCHSIA 0xFF00FF
-# define DARKMAGENTA 0x8B008B
-# define PURPLE 0x800080
-# define MEDIUMORCHID 0xBA55D3
-# define DARKVIOLET 0x9400D3
-# define DARKORCHID 0x9932CC
-# define INDIGO 0x4B0082
-# define BLUEVIOLET 0x8A2BE2
-# define MEDIUMPURPLE 0x9370DB
-# define MEDIUMSLATEBLUE 0x7B68EE
-# define SLATEBLUE 0x6A5ACD
-# define DARKSLATEBLUE 0x483D8B
-# define GHOSTWHITE 0xF8F8FF
-# define LAVENDER 0xE6E6FA
-# define BLUE 0x0000FF
-# define MEDIUMBLUE 0x0000CD
-# define DARKBLUE 0x00008B
-# define NAVY 0x000080
-# define MIDNIGHTBLUE 0x191970
-# define ROYALBLUE 0x4169E1
-# define CORNFLOWERBLUE 0x6495ED
-# define LIGHTSTEELBLUE 0xB0C4DE
-# define LIGHTSLATEGRAY 0x778899
-# define SLATEGRAY 0x708090
-# define DODGERBLUE 0x1E90FF
-# define ALICEBLUE 0xF0F8FF
-# define STEELBLUE 0x4682B4
-# define LIGHTSKYBLUE 0x87CEFA
-# define SKYBLUE 0x87CEEB
-# define DEEPSKYBLUE 0x00BFFF
-# define LIGHTBLUE 0xADD8E6
-# define POWDERBLUE 0xB0E0E6
-# define CADETBLUE 0x5F9EA0
-# define DARKTURQUOISE 0x00CED1
-# define AZURE 0xF0FFFF
-# define LIGHTCYAN 0xE0FFFF
-# define PALETURQUOISE 0xAFEEEE
-# define AQUA 0x00FFFF
-# define DARKCYAN 0x008B8B
-# define TEAL 0x008080
-# define DARKSLATEGRAY 0x2F4F4F
-# define MEDIUMTURQUOISE 0x48D1CC
-# define LIGHTSEAGREEN 0x20B2AA
-# define TURQUOISE 0x40E0D0
-# define AQUAMARINE 0x7FFFD4
-# define MEDIUMAQUAMARINE 0x66CDAA
-# define MEDIUMSPRINGGREEN 0x00FA9A
-# define MINTCREAM 0xF5FFFA
-# define SPRINGGREEN 0x00FF7F
-# define MEDIUMSEAGREEN 0x3CB371
-# define SEAGREEN 0x2E8B57
-# define HONEYDEW 0xF0FFF0
-# define DARKSEAGREEN 0x8FBC8F
-# define PALEGREEN 0x98FB98
-# define LIGHTGREEN 0x90EE90
-# define LIMEGREEN 0x32CD32
-# define LIME 0x00FF00
-# define FORESTGREEN 0x228B22
-# define GREEN 0x008000
-# define DARKGREEN 0x006400
-# define LAWNGREEN 0x7CFC00
-# define CHARTREUSE 0x7FFF00
-# define GREENYELLOW 0xADFF2F
-# define DARKOLIVEGREEN 0x556B2F
-# define YELLOWGREEN 0x9ACD32
-# define OLIVEDRAB 0x6B8E23
-# define IVORY 0xFFFFF0
-# define BEIGE 0xF5F5DC
-# define LIGHTYELLOW 0xFFFFE0
-# define LIGHTGOLDENRODYELLOW 0xFAFAD2
-# define YELLOW 0xFFFF00
-# define OLIVE 0x808000
-# define DARKKHAKI 0xBDB76B
-# define PALEGOLDENROD 0xEEE8AA
-# define LEMONCHIFFON 0xFFFACD
-# define KHAKI 0xF0E68C
-# define GOLD 0xFFD700
-# define CORNSILK 0xFFF8DC
-# define GOLDENROD 0xDAA520
-# define DARKGOLDENROD 0xB8860B
-# define FLORALWHITE 0xFFFAF0
-# define OLDLACE 0xFDF5E6
-# define WHEAT 0xF5DEB3
-# define ORANGE 0xFFA500
-# define MOCCASIN 0xFFE4B5
-# define PAPAYAWHIP 0xFFEFD5
-# define BLANCHEDALMOND 0xFFEBCD
-# define NAVAJOWHITE 0xFFDEAD
-# define ANTIQUEWHITE 0xFAEBD7
-# define TAN 0xD2B48C
-# define BURLYWOOD 0xDEB887
-# define DARKORANGE 0xFF8C00
-# define BISQUE 0xFFE4C4
-# define LINEN 0xFAF0E6
-# define PERU 0xCD853F
-# define PEACHPUFF 0xFFDAB9
-# define SANDYBROWN 0xF4A460
-# define CHOCOLATE 0xD2691E
-# define SADDLEBROWN 0x8B4513
-# define SEASHELL 0xFFF5EE
-# define SIENNA 0xA0522D
-# define LIGHTSALMON 0xFFA07A
-# define CORAL 0xFF7F50
-# define ORANGERED 0xFF4500
-# define DARKSALMON 0xE9967A
-# define TOMATO 0xFF6347
-# define SALMON 0xFA8072
-# define MISTYROSE 0xFFE4E1
-# define LIGHTCORAL 0xF08080
-# define SNOW 0xFFFAFA
-# define ROSYBROWN 0xBC8F8F
-# define INDIANRED 0xCD5C5C
-# define RED 0xFF0000
-# define BROWN 0xA52A2A
-# define FIREBRICK 0xB22222
-# define DARKRED 0x8B0000
-# define MAROON 0x800000
-# define WHITE 0xFFFFFF
-# define WHITESMOKE 0xF5F5F5
-# define GAINSBORO 0xDCDCDC
-# define LIGHTGREY 0xD3D3D3
-# define SILVER 0xC0C0C0
-# define DARKGRAY 0xA9A9A9
-# define GRAY 0x808080
-# define DIMGRAY 0x696969
-# define BLACK 0x000000
-
 # include <string.h>
+# include <pthread.h>
+
+enum	e_colour {
+	lightpink = 0xffb6c1,
+	pink = 0xffc0cb,
+	crimson = 0xdc143c,
+	lavenderblush = 0xfff0f5,
+	palevioletred = 0xdb7093,
+	hotpink = 0xff69b4,
+	deeppink = 0xff1493,
+	mediumvioletred = 0xc71585,
+	orchid = 0xda70d6,
+	thistle = 0xd8bfd8,
+	plum = 0xdda0dd,
+	violet = 0xee82ee,
+	fuchsia = 0xff00ff,
+	darkmagenta = 0x8b008b,
+	purple = 0x800080,
+	mediumorchid = 0xba55d3,
+	darkviolet = 0x9400d3,
+	darkorchid = 0x9932cc,
+	indigo = 0x4b0082,
+	blueviolet = 0x8a2be2,
+	mediumpurple = 0x9370db,
+	mediumslateblue = 0x7b68ee,
+	slateblue = 0x6a5acd,
+	darkslateblue = 0x483d8b,
+	ghostwhite = 0xf8f8ff,
+	lavender = 0xe6e6fa,
+	blue = 0x0000ff,
+	mediumblue = 0x0000cd,
+	darkblue = 0x00008b,
+	navy = 0x000080,
+	midnightblue = 0x191970,
+	royalblue = 0x4169e1,
+	cornflowerblue = 0x6495ed,
+	lightsteelblue = 0xb0c4de,
+	lightslategray = 0x778899,
+	slategray = 0x708090,
+	dodgerblue = 0x1e90ff,
+	aliceblue = 0xf0f8ff,
+	steelblue = 0x4682b4,
+	lightskyblue = 0x87cefa,
+	skyblue = 0x87ceeb,
+	deepskyblue = 0x00bfff,
+	lightblue = 0xadd8e6,
+	powderblue = 0xb0e0e6,
+	cadetblue = 0x5f9ea0,
+	darkturquoise = 0x00ced1,
+	azure = 0xf0ffff,
+	lightcyan = 0xe0ffff,
+	paleturquoise = 0xafeeee,
+	aqua = 0x00ffff,
+	darkcyan = 0x008b8b,
+	teal = 0x008080,
+	darkslategray = 0x2f4f4f,
+	mediumturquoise = 0x48d1cc,
+	lightseagreen = 0x20b2aa,
+	turquoise = 0x40e0d0,
+	aquamarine = 0x7fffd4,
+	mediumaquamarine = 0x66cdaa,
+	mediumspringgreen = 0x00fa9a,
+	mintcream = 0xf5fffa,
+	springgreen = 0x00ff7f,
+	mediumseagreen = 0x3cb371,
+	seagreen = 0x2e8b57,
+	honeydew = 0xf0fff0,
+	darkseagreen = 0x8fbc8f,
+	palegreen = 0x98fb98,
+	lightgreen = 0x90ee90,
+	limegreen = 0x32cd32,
+	lime = 0x00ff00,
+	forestgreen = 0x228b22,
+	green = 0x008000,
+	darkgreen = 0x006400,
+	lawngreen = 0x7cfc00,
+	chartreuse = 0x7fff00,
+	greenyellow = 0xadff2f,
+	darkolivegreen = 0x556b2f,
+	yellowgreen = 0x9acd32,
+	olivedrab = 0x6b8e23,
+	ivory = 0xfffff0,
+	beige = 0xf5f5dc,
+	lightyellow = 0xffffe0,
+	lightgoldenrodyellow = 0xfafad2,
+	yellow = 0xffff00,
+	olive = 0x808000,
+	darkkhaki = 0xbdb76b,
+	palegoldenrod = 0xeee8aa,
+	lemonchiffon = 0xfffacd,
+	khaki = 0xf0e68c,
+	gold = 0xffd700,
+	cornsilk = 0xfff8dc,
+	goldenrod = 0xdaa520,
+	darkgoldenrod = 0xb8860b,
+	floralwhite = 0xfffaf0,
+	oldlace = 0xfdf5e6,
+	wheat = 0xf5deb3,
+	orange = 0xffa500,
+	moccasin = 0xffe4b5,
+	papayawhip = 0xffefd5,
+	blanchedalmond = 0xffebcd,
+	navajowhite = 0xffdead,
+	antiquewhite = 0xfaebd7,
+	c_tan = 0xd2b48c,
+	burlywood = 0xdeb887,
+	darkorange = 0xff8c00,
+	bisque = 0xffe4c4,
+	linen = 0xfaf0e6,
+	peru = 0xcd853f,
+	peachpuff = 0xffdab9,
+	sandybrown = 0xf4a460,
+	chocolate = 0xd2691e,
+	saddlebrown = 0x8b4513,
+	seashell = 0xfff5ee,
+	sienna = 0xa0522d,
+	lightsalmon = 0xffa07a,
+	coral = 0xff7f50,
+	orangered = 0xff4500,
+	darksalmon = 0xe9967a,
+	tomato = 0xff6347,
+	salmon = 0xfa8072,
+	mistyrose = 0xffe4e1,
+	lightcoral = 0xf08080,
+	snow = 0xfffafa,
+	rosybrown = 0xbc8f8f,
+	indianred = 0xcd5c5c,
+	red = 0xff0000,
+	brown = 0xa52a2a,
+	firebrick = 0xb22222,
+	darkred = 0x8b0000,
+	maroon = 0x800000,
+	white = 0xffffff,
+	whitesmoke = 0xf5f5f5,
+	gainsboro = 0xdcdcdc,
+	lightgrey = 0xd3d3d3,
+	silver = 0xc0c0c0,
+	darkgray = 0xa9a9a9,
+	gray = 0x808080,
+	dimgray = 0x696969,
+	black = 0x000000
+};
+
+typedef struct	s_colour_arr
+{
+	int			colour[137];
+}				t_colour_arr;
 
 typedef struct	s_counter {
 	size_t	i;
@@ -240,6 +248,16 @@ typedef struct	s_uv {
 	double		s_scale;
 }				t_uv;
 
+typedef struct	s_complex {
+	double		re;
+	double		im;
+}				t_complex;
+
+typedef struct	s_dual {
+	t_complex	one;
+	t_complex	sq;
+}				t_dual;
+
 typedef struct	s_vec3 {
 	double		x;
 	double		y;
@@ -253,7 +271,7 @@ typedef struct	s_camera
 	double		ang_y;
 	double		ang_z;
 	double		dist;
-	t_vec3		vector;
+	t_uv		offset;
 	int			colour;
 }				t_cam;
 
@@ -291,7 +309,36 @@ typedef struct	s_vars {
 	t_data		*data;
 	t_map		*map;
 	t_cam		cur;
+	char		*set;
 }				t_vars;
+
+typedef struct	s_rgb {
+	double r;
+	double g;
+	double b;
+}				t_rgb;
+
+typedef struct	s_hsv{
+	double h;
+	double s;
+	double v;
+}				t_hsv;
+
+typedef struct	s_arg {
+	t_data		*data;
+	t_uv		screen;
+	t_cam		*cam;
+	void		(*f)(t_data*, t_uv, t_cam*);
+	pthread_t	*tid;
+}				t_arg;
+
+typedef struct	s_col_trans{
+	double		hh;
+	double		p;
+	double		q;
+	double		t;
+	double		ff;
+}				t_col_trans;
 
 int				g42_create_trgb(int t, int r, int g, int b);
 
@@ -360,4 +407,12 @@ t_colour		g42_hex_to_trgb(int trgb);
 int				g42_trgb_to_hex(t_colour trgb);
 
 double			g42_lerp(double v0, double v1, double t);
+
+t_rgb			g42_hsv_to_rgb(t_hsv in);
+
+t_hsv			g42_rgb_to_hsv(t_rgb in);
+
+int				g42_rgb_to_hex(t_rgb rgb);
+
+int				g42_get_colours(int index);
 #endif
