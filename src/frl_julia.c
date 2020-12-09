@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 11:14:18 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/08 15:08:00 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/09 14:02:38 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	frl_julia(t_data *data, t_uv screen, t_cam *cam)
 		i++;
 	}
 	if (i < MAX_ITER)
-		g42_mlx_pixel_put(data, screen.u, screen.v, frl_colour_scheme(i, 115, 225, 1));
+		g42_mlx_pixel_put(data, screen.u, screen.v, frl_colour_scheme(i, 115, 225, cam->mode));
 	else
-		g42_mlx_pixel_put(data, screen.u, screen.v, frl_colour_scheme(i, 115, 0, 1));
+		g42_mlx_pixel_put(data, screen.u, screen.v, frl_colour_scheme(i, 115, 0, cam->mode));
 }

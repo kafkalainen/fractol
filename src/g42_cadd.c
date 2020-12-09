@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   frl_handle_buttonpress.c                           :+:      :+:    :+:   */
+/*   g42_cadd.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/08 15:37:44 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/09 12:57:43 by jnivala          ###   ########.fr       */
+/*   Created: 2020/12/09 11:52:27 by jnivala           #+#    #+#             */
+/*   Updated: 2020/12/09 11:53:53 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "frl.h"
+#include "g42.h"
 
-int	frl_handle_buttonpress(int buttoncode, int x, int y, t_vars *vars)
+t_complex	g42_cadd(t_complex x, t_complex y)
 {
-	if (x && y && vars && (buttoncode == ZOOM_OUT || buttoncode == ZOOM_IN))
-		frl_zoom_fractal(buttoncode, x, y, vars);
-	return (0);
+	t_complex z;
+
+	z.re = x.re + y.re;
+	z.im = x.im + y.im;
+	return (z);
 }

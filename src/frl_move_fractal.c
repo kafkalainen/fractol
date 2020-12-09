@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 17:58:36 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/08 15:14:37 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/09 14:07:05 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,13 @@ int		frl_move_fractal(int keycode, t_vars *vars)
 	if (keycode == UP || keycode == DOWN)
 	{
 		change.y = keycode == UP ? 0.003 : -0.003;
-		vars->cur.offset.y += change.y;
+		vars->cur.offset.y += change.y / vars->cur.dist;
 	}
 	if (keycode == RIGHT || keycode == LEFT)
 	{
 		change.x = keycode == RIGHT ? -0.003 : 0.003;
-		vars->cur.offset.x += change.x;
+		vars->cur.offset.x += change.x / vars->cur.dist;
 	}
-	// printf("Current set is: %s", vars->set);
-	// printf("Current x offset is: %f", vars->cur.offset.x);
-	// printf("Current y offset is: %f", vars->cur.offset.y);
 	frl_draw_fractal(&vars->cur, vars->data, vars->set);
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->data->img, 0, 0);
 	return (0);

@@ -62,3 +62,6 @@ Bonus
 - Linear interpolation [Link](https://en.wikipedia.org/wiki/Linear_interpolation))
 - Illianois University examples on pthread [Link](https://courses.engr.illinois.edu/cs241/fa2010/ppt/10-pthread-examples.pdf)
 - Lode's Computer Graphics tutorial is a must read, it holds basically everything you need to get the basics of fractals. [Link](https://lodev.org/cgtutor/juliamandelbrot.html)
+- How to Render a Fractal, Fast [Link](https://blog.bede.io/how-to-render-a-fractal-fast/)
+- About one person's endeavour to create Mandelbrot on stupidly slow machine [Link](
+http://cowlark.com/2018-05-26-bogomandel/index.html)

@@ -6,12 +6,11 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 11:30:09 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/09 09:39:10 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/09 13:50:02 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "frl.h"
-#include "pthread.h"
 
 void		frl_mandelbrot(t_data *data, t_uv screen, t_cam *cam)
 {
@@ -19,8 +18,8 @@ void		frl_mandelbrot(t_data *data, t_uv screen, t_cam *cam)
 	t_dual			new;
 	int				i;
 
-	c.re = 1.5 * (screen.u - WIN_WIDTH / 2) / (0.5 * cam->dist * WIN_WIDTH) + cam->offset.x;
-	c.im = (screen.v - WIN_HEIGHT / 2) / (0.5 * cam->dist * WIN_HEIGHT) + cam->offset.y;
+	c.re = 1.5 * (screen.u - 0.5 * WIN_WIDTH) / (0.5 * cam->dist * WIN_WIDTH) + cam->offset.x;
+	c.im = (screen.v - 0.5 * WIN_HEIGHT) / (0.5 * cam->dist * WIN_HEIGHT) + cam->offset.y;
 	i = 0;
 	new.one.re = 0;
 	new.one.im = 0;

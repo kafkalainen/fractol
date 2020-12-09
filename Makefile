@@ -6,7 +6,7 @@
 #    By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/03 09:44:44 by jnivala           #+#    #+#              #
-#    Updated: 2020/12/09 09:50:38 by jnivala          ###   ########.fr        #
+#    Updated: 2020/12/09 11:54:33 by jnivala          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,9 @@ MLX = $(mlx_dir)libmlx.a
 
 SRC_LIST = \
 	main.c\
+	g42_cabs.c\
+	g42_cadd.c\
+	g42_cmultiply.c\
 	g42_get_transparency.c\
 	g42_get_blue.c\
 	g42_get_green.c\
@@ -93,7 +96,7 @@ OBJ = $(SRC:$S%=$O%.o)
 RM = /bin/rm -f
 RMDIR = /bin/rmdir
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -O3
 INCLUDES = $(addprefix -I,$(include_dirs))
 
 .PHONY: all clean fclean re debug

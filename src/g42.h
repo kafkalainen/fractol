@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 08:32:27 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/09 09:38:09 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/09 11:54:16 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -339,6 +339,12 @@ typedef struct	s_col_trans{
 	double		t;
 	double		ff;
 }				t_col_trans;
+
+t_complex		g42_cadd(t_complex x, t_complex y);
+
+double			g42_cabs(t_complex c);
+
+t_complex		g42_cmultiply(t_complex x, t_complex y);
 
 int				g42_create_trgb(int t, int r, int g, int b);
 
