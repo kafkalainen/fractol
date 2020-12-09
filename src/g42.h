@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 08:32:27 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/08 14:45:25 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/09 09:38:09 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -273,6 +273,7 @@ typedef struct	s_camera
 	double		time;
 	double		old_time;
 	double		frame;
+	int			mode;
 }				t_cam;
 
 typedef struct	s_map {

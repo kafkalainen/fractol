@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 08:48:55 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/04 13:03:15 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/09 09:55:15 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,14 @@ int		frl_colour_scheme(int i, int g, int b, int mode)
 		return (colour);
 	} else if (mode == 2) {
 		return (colour = g42_get_colours(i));
+	} else if (mode == 3) {
+		if (b > 0) {
+			colour = white;
+		} else {
+			colour = black;
+		}
 	} else {
 		return (colour);
 	}
+	return (colour);
 }

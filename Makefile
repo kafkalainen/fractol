@@ -6,7 +6,7 @@
 #    By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/03 09:44:44 by jnivala           #+#    #+#              #
-#    Updated: 2020/12/08 18:40:45 by jnivala          ###   ########.fr        #
+#    Updated: 2020/12/09 09:50:38 by jnivala          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,6 +62,7 @@ SRC_LIST = \
 	g42_rgb_to_hex.c\
 	g42_get_colours.c\
 	frl_clean.c\
+	frl_change_colour_mode.c\
 	frl_count_colour_scale.c\
 	frl_del_vars.c\
 	frl_draw_background.c\

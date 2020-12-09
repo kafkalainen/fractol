@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 16:32:21 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/08 18:18:55 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/09 09:53:12 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@
 #include "g42.h"
 #include <string.h>
 
-int		frl_change_colour(int keycode, t_vars *vars);
+int		frl_change_colour_mode(int buttoncode, t_vars *vars);
 
 t_vars	*frl_clean(t_vars **vars);
 
