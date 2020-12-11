@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 11:30:09 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/09 13:50:02 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/10 11:10:18 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,23 +18,19 @@ void		frl_mandelbrot(t_data *data, t_uv screen, t_cam *cam)
 	t_dual			new;
 	int				i;
 
-	c.re = 1.5 * (screen.u - 0.5 * WIN_WIDTH) / (0.5 * cam->dist * WIN_WIDTH) + cam->offset.x;
-	c.im = (screen.v - 0.5 * WIN_HEIGHT) / (0.5 * cam->dist * WIN_HEIGHT) + cam->offset.y;
 	i = 0;
-	new.one.re = 0;
-	new.one.im = 0;
-	new.sq.re = 0;
-	new.sq.im = 0;
-	while (new.sq.re + new.sq.im <= 4 && i < 1000)
+	c = frl_normalize_coordinates(screen.u, screen.v, cam);
+	new.one.re = 0.0;
+	new.one.im = 0.0;
+	new.sq.re = 0.0;
+	new.sq.im = 0.0;
+	while (new.sq.re + new.sq.im <= 4.0 && i < 1000)
 	{
-		new.one.im = 2 * new.one.re * new.one.im + c.im;
+		new.one.im = 2.0 * new.one.re * new.one.im + c.im;
 		new.one.re = new.sq.re - new.sq.im + c.re;
 		new.sq.re = new.one.re * new.one.re;
 		new.sq.im = new.one.im * new.one.im;
 		i++;
 	}
-	if (i < MAX_ITER)
-		g42_mlx_pixel_put(data, screen.u, screen.v, frl_colour_scheme(i, 115, 225, cam->mode));
-	else
-		g42_mlx_pixel_put(data, screen.u, screen.v, frl_colour_scheme(i, 115, 0, cam->mode));
+	g42_mlx_pixel_put(data, screen.u, screen.v, frl_colour_scheme(i, cam));
 }

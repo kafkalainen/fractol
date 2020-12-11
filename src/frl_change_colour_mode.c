@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 15:39:56 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/09 09:51:16 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/10 15:03:03 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,16 @@
 #include "../libft/libft.h"
 
 static int		frl_colour_mode_switch(int i) {
-	if (i == 1) {
+	if (i == 1)
 		return (2);
-	} else if (i == 2) {
+	else if (i == 2)
 		return (3);
-	} else if (i == 3) {
+	else if (i == 3)
 		return (4);
-	} else if (i == 4) {
+	else if (i == 4)
 		return (1);
-	} else {
+	else
 		return (0);
-	}
 }
 
 int				frl_change_colour_mode(int buttoncode, t_vars *vars)

@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 11:14:18 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/09 14:02:38 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/10 11:10:30 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,13 @@ void	frl_julia(t_data *data, t_uv screen, t_cam *cam)
 	i = 0;
 	c.re = -0.7;
 	c.im = 0.27015;
-	new.re = 1.5 * (screen.u - WIN_WIDTH / 2) / (0.5 * cam->dist * WIN_WIDTH) + cam->offset.x;
-	new.im = (screen.v - WIN_HEIGHT / 2) / (0.5 * cam->dist * WIN_HEIGHT) + cam->offset.y;
-	while (new.re * new.re + new.im * new.im  <= 4 && i < MAX_ITER)
+	new = frl_normalize_coordinates(screen.u, screen.v, cam);
+	while (new.re * new.re + new.im * new.im  <= 4.0 && i < MAX_ITER)
 	{
 		old = new;
 		new.re = old.re * old.re - old.im * old.im + c.re;
-		new.im = 2 * old.re * old.im + c.im;
+		new.im = 2.0 * old.re * old.im + c.im;
 		i++;
 	}
-	if (i < MAX_ITER)
-		g42_mlx_pixel_put(data, screen.u, screen.v, frl_colour_scheme(i, 115, 225, cam->mode));
-	else
-		g42_mlx_pixel_put(data, screen.u, screen.v, frl_colour_scheme(i, 115, 0, cam->mode));
+	g42_mlx_pixel_put(data, screen.u, screen.v, frl_colour_scheme(i, cam));
 }

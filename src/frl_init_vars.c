@@ -6,20 +6,29 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 10:39:39 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/05 12:34:09 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/11 08:16:12 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "g42.h"
 #include <stdlib.h>
 
-t_vars *frl_init_vars(void)
+t_vars	**frl_init_vars(int argc)
 {
-	t_vars *vars;
+	int		i;
+	t_vars	**vars;
 
-	if (!(vars = (t_vars *)malloc(sizeof(t_vars))))
+	i = 1;
+	if (!(vars = (t_vars**)malloc(sizeof(t_vars*) * argc + 1)))
 		return (NULL);
-	if (!(vars->data = (t_data *)malloc(sizeof(t_data))))
-		return (NULL);
+	while (i < argc)
+	{
+		if (!(vars[i] = (t_vars*)malloc(sizeof(t_vars))))
+			return (NULL);
+		if (!(vars[i]->data = (t_data*)malloc(sizeof(t_data))))
+			return (NULL);
+		vars[i]->index = i;
+		i++;
+	}
 	return (vars);
 }

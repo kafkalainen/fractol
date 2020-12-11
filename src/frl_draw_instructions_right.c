@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 07:01:40 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/03 18:15:56 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/10 10:56:52 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,12 @@
 
 void frl_draw_instructions_right(t_data *data, t_uv coord)
 {
-	g42_str_pxl(data, coord, "To switch views:");
+	g42_str_pxl(data, coord, "Press 1 to change colour mode");
 	coord.v += 7 * 2;
-	g42_str_pxl(data, coord, "Press 3 to increase y axis and 4 to flatten");
+	g42_str_pxl(data, coord, "Press 2 to change colour");
+	coord.v += 7 * 2;
+	g42_str_pxl(data, coord, "Press 3 to reset colour");
+	coord.v += 7 * 2;
+	g42_str_pxl(data, coord, "Press 3 to reset all");
 	coord.v += 7 * 2;
 }

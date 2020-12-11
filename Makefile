@@ -6,7 +6,7 @@
 #    By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/03 09:44:44 by jnivala           #+#    #+#              #
-#    Updated: 2020/12/09 11:54:33 by jnivala          ###   ########.fr        #
+#    Updated: 2020/12/10 15:09:35 by jnivala          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,10 +64,10 @@ SRC_LIST = \
 	g42_rgb_to_hsv.c\
 	g42_rgb_to_hex.c\
 	g42_get_colours.c\
+	g42_linear_mapping.c\
 	frl_clean.c\
+	frl_change_colours.c\
 	frl_change_colour_mode.c\
-	frl_count_colour_scale.c\
-	frl_del_vars.c\
 	frl_draw_background.c\
 	frl_draw_fractal.c\
 	frl_draw_instructions_left.c\
@@ -77,12 +77,14 @@ SRC_LIST = \
 	frl_error.c\
 	frl_handle_buttonpress.c\
 	frl_handle_keypress.c\
-	frl_idx.c\
 	frl_init_camera.c\
 	frl_init_vars.c\
 	frl_julia.c\
 	frl_mandelbrot.c\
+	frl_normalize_coordinates.c\
 	frl_paint_current_fractal.c\
+	frl_reset_colour.c\
+	frl_reset.c\
 	frl_move_fractal.c\
 	frl_colour_scheme.c\
 	frl_zoom_fractal.c\
@@ -96,7 +98,7 @@ OBJ = $(SRC:$S%=$O%.o)
 RM = /bin/rm -f
 RMDIR = /bin/rmdir
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -O3
+CFLAGS = -Wall -Wextra -Werror -g
 INCLUDES = $(addprefix -I,$(include_dirs))
 
 .PHONY: all clean fclean re debug

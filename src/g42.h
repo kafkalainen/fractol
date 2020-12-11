@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 08:32:27 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/09 11:54:16 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/10 21:54:19 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -265,18 +265,8 @@ typedef struct	s_vec3 {
 	double		c_scale;
 }				t_vec3;
 
-typedef struct	s_camera
+typedef struct	s_map
 {
-	double		dist;
-	t_vec3		offset;
-	int			colour;
-	double		time;
-	double		old_time;
-	double		frame;
-	int			mode;
-}				t_cam;
-
-typedef struct	s_map {
 	t_vec3		*coord;
 	t_vec3		*proj;
 	t_uv		*screen;
@@ -288,29 +278,15 @@ typedef struct	s_map {
 	size_t		pts;
 }				t_map;
 
-typedef struct	s_colour {
+typedef struct	s_colour
+{
 	int			t;
 	int			r;
 	int			g;
 	int			b;
 }				t_colour;
 
-typedef struct	s_data {
-	void		*img;
-	char		*addr;
-	int			bpp;
-	int			llen;
-	int			endian;
-	int			text_size;
-}				t_data;
 
-typedef struct	s_vars {
-	void		*mlx;
-	void		*win;
-	t_data		*data;
-	t_cam		cur;
-	char		*set;
-}				t_vars;
 
 typedef struct	s_rgb {
 	double r;
@@ -318,11 +294,42 @@ typedef struct	s_rgb {
 	double b;
 }				t_rgb;
 
-typedef struct	s_hsv{
+typedef struct	s_hsv {
 	double h;
 	double s;
 	double v;
 }				t_hsv;
+
+typedef struct	s_col_trans {
+	double		hh;
+	double		p;
+	double		q;
+	double		t;
+	double		ff;
+}				t_col_trans;
+
+typedef struct	s_bound {
+	double		upper;
+	double		lower;
+}				t_bound;
+
+typedef struct	s_camera
+{
+	double		dist;
+	t_vec3		offset;
+	t_rgb		colour;
+	int			mode;
+}				t_cam;
+
+typedef struct	s_data
+{
+	void		*img;
+	char		*addr;
+	int			bpp;
+	int			llen;
+	int			endian;
+	int			text_size;
+}				t_data;
 
 typedef struct	s_arg {
 	t_data		*data;
@@ -332,13 +339,16 @@ typedef struct	s_arg {
 	pthread_t	*tid;
 }				t_arg;
 
-typedef struct	s_col_trans{
-	double		hh;
-	double		p;
-	double		q;
-	double		t;
-	double		ff;
-}				t_col_trans;
+typedef struct	s_vars {
+	void		**arr;
+	void		*mlx;
+	void		*win;
+	t_data		*data;
+	t_cam		cur;
+	char		*set;
+	int			index;
+	int			*window_count;
+}				t_vars;
 
 t_complex		g42_cadd(t_complex x, t_complex y);
 
@@ -413,6 +423,8 @@ t_colour		g42_hex_to_trgb(int trgb);
 int				g42_trgb_to_hex(t_colour trgb);
 
 double			g42_lerp(double v0, double v1, double t);
+
+double			g42_linear_mapping(double val, t_bound x1, t_bound x2);
 
 t_rgb			g42_hsv_to_rgb(t_hsv in);
 

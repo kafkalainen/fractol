@@ -21,6 +21,8 @@ The latest repository of the school's MinilibX can be found here. Note, that lat
 ![Example of the Mandelbrot](example.png)
 
 ### To-do
+- List of available parameters.
+- Init vars has allocated memory, it needs to be freed.
 
 ### Checklist
 

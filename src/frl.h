@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 16:32:21 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/09 12:57:24 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/10 16:38:06 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,49 +46,49 @@
 #include "g42.h"
 #include <string.h>
 
-int		frl_change_colour_mode(int buttoncode, t_vars *vars);
+int			frl_change_colour_mode(int buttoncode, t_vars *vars);
 
-t_vars	*frl_clean(t_vars **vars);
+int			frl_change_colours(int buttoncode, t_vars *vars);
 
-int		frl_count_colour_scale(t_map *map);
+t_vars		*frl_clean(t_vars **vars);
 
-char	*frl_del_vars(t_vars **vars);
+int			frl_draw_background(t_data *data);
 
-int		frl_draw_background(t_data *data);
+int			frl_draw_fractal(t_cam *cam, t_data *data, char *str);
 
-int		frl_draw_fractal(t_cam *cam, t_data *data, char *str);
+int			frl_draw_instructions_left(t_data *data, t_uv coord);
 
-int		frl_draw_instructions_left(t_data *data, t_uv coord);
+int			frl_draw_instructions_right(t_data *data, t_uv coord);
 
-int		frl_draw_instructions_right(t_data *data, t_uv coord);
+int			frl_draw_menu(t_data *data, int colour);
 
-int		frl_draw_menu(t_data *data, int colour);
+void		frl_draw_title(t_data *data, t_uv coord);
 
-void	frl_draw_title(t_data *data, t_uv coord);
+int			frl_error(char *message);
 
-int		frl_error(char *message);
+int			frl_handle_buttonpress(int buttoncode, int x, int y, t_vars *vars);
 
-int		frl_front_object(int keycode, t_vars *vars);
+int			frl_handle_keypress(int keycode, t_vars *vars);
 
-int		frl_handle_buttonpress(int buttoncode, int x, int y, t_vars *vars);
+int			frl_init_camera(t_cam *cur);
 
-int		frl_handle_keypress(int keycode, t_vars *vars);
+t_vars		**frl_init_vars(int argc);
 
-size_t	frl_idx(size_t x, size_t y, t_map *map);
+void		frl_paint_current_fractal(t_data *data, t_cam *cam, void (*f)(t_data*, t_uv, t_cam*));
 
-int		frl_init_camera(t_cam *cur);
+void		frl_mandelbrot(t_data *data, t_uv screen, t_cam *cam);
 
-t_vars	*frl_init_vars(void);
+t_complex	frl_normalize_coordinates(int x, int y, t_cam *cam);
 
-void	frl_paint_current_fractal(t_data *data, t_cam *cam, void (*f)(t_data*, t_uv, t_cam*));
+void		frl_julia(t_data *data, t_uv screen, t_cam *cam);
 
-void	frl_mandelbrot(t_data *data, t_uv screen, t_cam *cam);
+int			frl_move_fractal(int keycode, t_vars *vars);
 
-void	frl_julia(t_data *data, t_uv screen, t_cam *cam);
+int			frl_colour_scheme(int i, t_cam *cam);
 
-int		frl_move_fractal(int keycode, t_vars *vars);
+int			frl_zoom_fractal(int buttoncode, int x, int y, t_vars *vars);
 
-int		frl_colour_scheme(int i, int g, int b, int mode);
+int			frl_reset_colour(int buttoncode, t_vars *vars);
 
-int		frl_zoom_fractal(int buttoncode, int x, int y, t_vars *vars);
+int			frl_reset(int buttoncode, t_vars *vars);
 #endif

@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   frl_count_colour_scale.c                           :+:      :+:    :+:   */
+/*   frl_normalize_coordinates.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/29 13:03:12 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/01 15:14:35 by jnivala          ###   ########.fr       */
+/*   Created: 2020/12/10 09:43:01 by jnivala           #+#    #+#             */
+/*   Updated: 2020/12/10 09:43:43 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "g42.h"
+#include "frl.h"
 
-int frl_count_colour_scale(t_map *map)
+t_complex	frl_normalize_coordinates(int x, int y, t_cam *cam)
 {
-	size_t i;
-	double minmax_dist;
-	double c_dist;
+	t_complex	c;
 
-	i = 0;
-	minmax_dist = (double)map->max_depth - (double)map->min_depth;
-	while (i < map->pts)
-	{
-		c_dist = (double)(map->coord[i].y - map->min_depth);
-		map->proj[i].c_scale = (double)(c_dist / minmax_dist);
-		i++;
-	}
-	return (0);
+	c.re = 1.5 * (x - 0.5 * WIN_WIDTH) / (0.5 * WIN_WIDTH * cam->dist)
+		 + cam->offset.x;
+	c.im = (y - 0.5 * WIN_HEIGHT) / (0.5 * WIN_HEIGHT * cam->dist)
+		 + cam->offset.y;
+	return (c);
 }
