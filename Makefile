@@ -6,7 +6,7 @@
 #    By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/03 09:44:44 by jnivala           #+#    #+#              #
-#    Updated: 2020/12/15 12:55:20 by jnivala          ###   ########.fr        #
+#    Updated: 2020/12/15 20:11:07 by jnivala          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,11 +56,13 @@ SRC_LIST = \
 	frl_handle_btn.c\
 	frl_handle_key.c\
 	frl_handle_mov.c\
+	frl_image_loop.c\
 	frl_init_camera.c\
 	frl_init_vars.c\
 	frl_init_windows.c\
 	frl_julia.c\
 	frl_mandelbrot.c\
+	frl_mutate_iterations.c\
 	frl_normalize_coordinates.c\
 	frl_paint_current_fractal.c\
 	frl_reset_colour.c\
@@ -80,7 +82,7 @@ OBJ = $(SRC:$S%=$O%.o)
 RM = /bin/rm -f
 RMDIR = /bin/rmdir
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -O3
+CFLAGS = -Wall -Wextra -Werror -g
 INCLUDES = $(addprefix -I,$(include_dirs))
 
 .PHONY: all clean fclean re

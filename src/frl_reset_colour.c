@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 10:12:01 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/15 13:09:16 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/15 20:41:48 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int		frl_reset_colour(int buttoncode, t_vars *vars)
 		&vars->data->llen, &vars->data->endian);
 	if (buttoncode == KEY_3)
 	{
+		vars->cur.change = 1;
 		vars->cur.colour.r = 16;
 		vars->cur.colour.g = 52;
 		vars->cur.colour.b = 166;

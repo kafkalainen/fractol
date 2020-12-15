@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 16:32:21 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/15 14:30:28 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/15 21:37:19 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@
 # define EXIT_SUCCESS 0
 # define EXIT_FAILURE 1
 # define INVALID_CHARACTERS 2
-# define WIN_W 1920
-# define WIN_H 1080
-# define MENU_HEIGHT 140
+# define WIN_W 1000
+# define WIN_H 750
+# define MENU_HEIGHT 120
 # define BUFF_SIZE 1024
 # define MAX_THREADS 25
 # include "g42.h"
@@ -73,6 +73,8 @@ int			frl_handle_key(int keycode, t_vars *vars);
 
 int			frl_handle_mov(int x, int y, t_vars *vars);
 
+int			frl_image_loop(t_vars *vars);
+
 int			frl_init_camera(t_cam *cam);
 
 t_vars		**frl_init_vars(int argc);
@@ -102,4 +104,6 @@ int			frl_reset(int buttoncode, t_vars *vars);
 int			frl_usage(void);
 
 int			frl_validate_sets(int argc, char **argv);
+
+int			frl_mutate_iterations(int buttoncode, t_vars *vars);
 #endif

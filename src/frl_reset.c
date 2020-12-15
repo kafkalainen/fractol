@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 10:35:51 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/15 13:53:26 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/15 20:42:02 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@ int		frl_reset(int buttoncode, t_vars *vars)
 	vars->data->addr = mlx_get_data_addr(vars->data->img, &vars->data->bpp,
 		&vars->data->llen, &vars->data->endian);
 	if (buttoncode == KEY_4)
+	{
+		vars->cur.change = 1;
 		frl_init_camera(&vars->cur);
+	}
 	frl_draw_fractal(&vars->cur, vars->data, vars->set);
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->data->img, 0, 0);
 	return (0);

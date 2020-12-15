@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 08:32:27 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/15 13:04:13 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/15 20:09:17 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -294,6 +294,7 @@ typedef struct	s_camera
 	int			mode;
 	t_complex	shape;
 	int			max_iter;
+	int			change;
 }				t_cam;
 
 typedef struct	s_data
