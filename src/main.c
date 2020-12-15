@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/12 10:47:56 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/11 08:57:53 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/15 11:23:38 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ int		main(int argc, char **argv)
 
 	windows = argc - 1;
 	if (argc == 1)
-		return (frl_error("Please provide a valid Fractalset. ./fractol <fractalname>"));
+		return (frl_usage());
+	if (frl_validate_sets(argc, argv))
+		return (EXIT_FAILURE);
 	if (!(vars = frl_init_vars(argc)))
 		return (EXIT_FAILURE);
 	if (!(vars[1]->mlx = mlx_init()))

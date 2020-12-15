@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/04 14:35:57 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/15 10:19:48 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/15 11:48:20 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ double				ft_cabs(t_complex c);
 t_complex			ft_cadd(t_complex x, t_complex y);
 t_complex			ft_cmultiply(t_complex x, t_complex y);
 size_t				ft_count_wrds(const char *s, int d);
+double				ft_dabs(double i);
 int					ft_isalpha(int c);
 int					ft_isalnum(int c);
 int					ft_isascii(int c);

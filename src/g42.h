@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 08:32:27 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/15 10:22:25 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/15 13:04:13 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 # define G42_H
 # define KEYPRESS 2
 # define KEYRELEASE 3
-# define BUTTONPRESS 4
+# define BTNPRESS 4
 # define BUTTONRELEASE 5
-# define MOTIONNOTIFY 6
+# define MTNNOTIFY 6
 # define ENTERNOTIFY 7
 # define LEAVENOTIFY 8
 # define FOCUSIN 9
@@ -50,11 +50,11 @@
 # define NOEVENTMASK 0L
 # define KEYPRESSMASK (1L<<0)
 # define KEYRELEASEMASK (1L<<1)
-# define BUTTONPRESSMASK (1L<<2)
+# define BTNPRESSMASK (1L<<2)
 # define BUTTONRELEASEMASK (1L<<3)
 # define ENTERWINDOWMASK (1L<<4)
 # define LEAVEWINDOWMASK (1L<<5)
-# define POINTERMOTIONMASK (1L<<6)
+# define PTRMTNMASK (1L<<6)
 # define POINTERMOTIONHINTMASK (1L<<7)
 # define BUTTON1MOTIONMASK (1L<<8)
 # define BUTTON2MOTIONMASK (1L<<9)
@@ -230,14 +230,6 @@ typedef struct	s_counter {
 	size_t	k;
 }				t_counter;
 
-typedef struct	s_m4x4 {
-	double	m[4][4];
-}				t_m4x4;
-
-typedef struct	s_m3x3 {
-	double	m[3][3];
-}				t_m3x3;
-
 typedef struct	s_pxl_c
 {
 	int			c[36];
@@ -261,19 +253,6 @@ typedef struct	s_vec3 {
 	double		c_scale;
 }				t_vec3;
 
-typedef struct	s_map
-{
-	t_vec3		*coord;
-	t_vec3		*proj;
-	t_uv		*screen;
-	size_t		height;
-	double		max_depth;
-	double		min_depth;
-	size_t		*width;
-	size_t		max_width;
-	size_t		pts;
-}				t_map;
-
 typedef struct	s_colour
 {
 	int			t;
@@ -281,8 +260,6 @@ typedef struct	s_colour
 	int			g;
 	int			b;
 }				t_colour;
-
-
 
 typedef struct	s_rgb {
 	double r;
@@ -316,6 +293,7 @@ typedef struct	s_camera
 	t_rgb		colour;
 	int			mode;
 	t_complex	shape;
+	int			max_iter;
 }				t_cam;
 
 typedef struct	s_data
@@ -349,8 +327,6 @@ typedef struct	s_vars {
 
 int				g42_create_trgb(int t, int r, int g, int b);
 
-int				g42_c_grad(t_uv p0, t_uv p1, t_uv s, int colour);
-
 int				g42_get_transparency(int trgb);
 
 int				g42_get_red(int trgb);
@@ -365,44 +341,6 @@ void			g42_mlx_pixel_put(t_data *data, int x, int y, int color);
 
 void			g42_solid_square(t_data *data, t_uv offset, int c, int s);
 
-void			g42_mlx_draw_line_dda(t_data *data, t_uv p0, t_uv p1, int c);
-
-void			g42_draw_line_bre(t_data *data, t_uv p0, t_uv p1, int c);
-
-void			g42_mlx_draw_x_y_line(t_data *data, t_uv p0, t_uv p1, int c);
-
-void			g42_mlx_draw_diagonal(t_data *data, t_uv p0, t_uv p1, int c);
-
-void			g42_normalize_vector(t_vec3 *v);
-
-int				g42_dot_product(t_vec3 *a, t_vec3 *b);
-
-void			g42_cross_product(t_vec3 *a, t_vec3 *b, t_vec3 *cross);
-
-t_vec3			g42_multi_vec_matrix(const t_vec3 *src, t_m4x4 *x);
-
-void			g42_rotate_x_axis(t_vec3 *vec, double angle);
-
-void			g42_rotate_y_axis(t_vec3 *vec, double angle);
-
-void			g42_rotate_z_axis(t_vec3 *vec, double angle);
-
-void			g42_scale_point(t_vec3 *vec, double scale);
-
-void			g42_scale_y(t_vec3 *vec, double scale);
-
-void			g42_translate(t_vec3 *vec, t_vec3 a);
-
-void			g42_clip_point(t_vec3 *a);
-
-t_uv			g42_2d_to_uv(t_vec3 coord, t_map *map, t_cam *cam);
-
-t_uv			g42_ndc_to_raster_space(t_vec3 ndc);
-
-void			g42_mod_pts(t_map *map, void (*f)(t_vec3*, double), double mod);
-
-void			g42_mod_vec(t_map *map, void (*f)(t_vec3*, t_vec3), t_vec3 mod);
-
 void			g42_str_pxl(t_data *data, t_uv coord, char *str);
 
 t_pxl_c			g42_pxl_alphabet(int l, int b, int c);
@@ -412,8 +350,6 @@ t_pxl_c			g42_pxl_numbers(int l, int b, int c);
 t_colour		g42_hex_to_trgb(int trgb);
 
 int				g42_trgb_to_hex(t_colour trgb);
-
-double			g42_lerp(double v0, double v1, double t);
 
 double			g42_linear_mapping(double val, t_bound x1, t_bound x2);
 

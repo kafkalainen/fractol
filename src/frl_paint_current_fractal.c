@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 09:47:50 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/08 14:04:58 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/15 13:10:01 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ static void	*frl_paint_area(void *args)
 	current = pthread_self();
 	while (current != arg->tid[index])
 		index++;
-	screen.v = index * WIN_HEIGHT / MAX_THREADS;
-	limit = (index + 1) * WIN_HEIGHT / MAX_THREADS;
+	screen.v = index * WIN_H / MAX_THREADS;
+	limit = (index + 1) * WIN_H / MAX_THREADS;
 	while (screen.v < limit)
 	{
 		screen.u = 0;
-		while (screen.u < WIN_WIDTH)
+		while (screen.u < WIN_W)
 		{
 			arg->f(arg->data, screen, arg->cam);
 			screen.u++;

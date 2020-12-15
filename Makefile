@@ -6,7 +6,7 @@
 #    By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/03 09:44:44 by jnivala           #+#    #+#              #
-#    Updated: 2020/12/15 10:45:59 by jnivala          ###   ########.fr        #
+#    Updated: 2020/12/15 12:55:20 by jnivala          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,36 +31,18 @@ SRC_LIST = \
 	g42_create_trgb.c\
 	g42_invert_trgb.c\
 	g42_mlx_pixel_put.c\
-	g42_mlx_draw_line_dda.c\
-	g42_draw_line_bre.c\
-	g42_mlx_draw_x_y_line.c\
-	g42_mlx_draw_diagonal.c\
 	g42_solid_square.c\
-	g42_cross_product.c\
-	g42_dot_product.c\
-	g42_normalize_vector.c\
-	g42_2d_to_uv.c\
-	g42_ndc_to_raster_space.c\
-	g42_rotate_x_axis.c\
-	g42_rotate_y_axis.c\
-	g42_rotate_z_axis.c\
-	g42_scale_point.c\
-	g42_mod_pts.c\
-	g42_mod_vec.c\
-	g42_multi_vec_matrix.c\
-	g42_translate.c\
 	g42_str_pxl.c\
 	g42_pxl_alphabet.c\
 	g42_pxl_numbers.c\
 	g42_hex_to_trgb.c\
 	g42_trgb_to_hex.c\
-	g42_c_grad.c\
-	g42_scale_y.c\
 	g42_hsv_to_rgb.c\
 	g42_rgb_to_hsv.c\
 	g42_rgb_to_hex.c\
 	g42_get_colours.c\
 	g42_linear_mapping.c\
+	frl_burningship.c\
 	frl_clean.c\
 	frl_change_colours.c\
 	frl_change_colour_mode.c\
@@ -71,9 +53,9 @@ SRC_LIST = \
 	frl_draw_menu.c\
 	frl_draw_title.c\
 	frl_error.c\
-	frl_handle_buttonpress.c\
-	frl_handle_keypress.c\
-	frl_handle_movement.c\
+	frl_handle_btn.c\
+	frl_handle_key.c\
+	frl_handle_mov.c\
 	frl_init_camera.c\
 	frl_init_vars.c\
 	frl_init_windows.c\
@@ -85,6 +67,8 @@ SRC_LIST = \
 	frl_reset.c\
 	frl_move_fractal.c\
 	frl_colour_scheme.c\
+	frl_usage.c\
+	frl_validate_sets.c\
 	frl_zoom_fractal.c\
 
 HEADERS = $(addprefix $S,\

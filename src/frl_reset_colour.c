@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 10:12:01 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/10 15:02:40 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/15 13:09:16 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,11 @@
 int		frl_reset_colour(int buttoncode, t_vars *vars)
 {
 	mlx_destroy_image(vars->mlx, vars->data->img);
-	vars->data->img = mlx_new_image(vars->mlx, WIN_WIDTH, WIN_HEIGHT);
+	vars->data->img = mlx_new_image(vars->mlx, WIN_W, WIN_H);
 	vars->data->addr = mlx_get_data_addr(vars->data->img, &vars->data->bpp,
 		&vars->data->llen, &vars->data->endian);
-	if (buttoncode == KEY_3) {
+	if (buttoncode == KEY_3)
+	{
 		vars->cur.colour.r = 16;
 		vars->cur.colour.g = 52;
 		vars->cur.colour.b = 166;

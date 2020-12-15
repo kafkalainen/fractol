@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   g42_normalize_vector.c                             :+:      :+:    :+:   */
+/*   frl_validate_sets.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/17 16:56:46 by jnivala           #+#    #+#             */
-/*   Updated: 2020/10/30 18:39:34 by jnivala          ###   ########.fr       */
+/*   Created: 2020/12/15 10:54:04 by jnivala           #+#    #+#             */
+/*   Updated: 2020/12/15 13:33:15 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "g42.h"
+#include "frl.h"
 #include "../libft/libft.h"
 
-void	g42_normalize_vector(t_vec3 *v)
+int				frl_validate_sets(int argc, char **argv)
 {
-	unsigned int	len2;
-	unsigned int	inv_len;
+	int		i;
 
-	len2 = v->x * v->x + v->y * v->y + v->z * v->z;
-	if (len2 > 0)
+	i = 1;
+	while (i < argc)
 	{
-		inv_len = 1 / ft_sqrt(len2);
-		v->x *= inv_len;
-		v->y *= inv_len;
-		v->z *= inv_len;
+		if (ft_strcmp(argv[i], "julia") != 0 &&
+			ft_strcmp(argv[i], "mandelbrot") != 0 &&
+			ft_strcmp(argv[i], "burningship") != 0)
+		{
+			ft_putstr_fd("ERROR: Given parameter is not valid set\n", 2);
+			ft_putstr_fd(argv[i], 2);
+			ft_putchar_fd('\n', 2);
+			frl_usage();
+			return (EXIT_FAILURE);
+		}
+		i++;
 	}
+	return (EXIT_SUCCESS);
 }

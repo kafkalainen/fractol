@@ -6,23 +6,24 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 12:20:07 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/15 10:23:38 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/15 12:05:04 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "frl.h"
 #include <stdlib.h>
 
-int		frl_init_camera(t_cam *cur)
+int		frl_init_camera(t_cam *cam)
 {
-	cur->dist = 1.0;
-	cur->offset.x = 0.0;
-	cur->offset.y = 0.0;
-	cur->colour.r = 16;
-	cur->colour.g = 52;
-	cur->colour.b = 166;
-	cur->mode = 1;
-	cur->shape.re = -0.7;
-	cur->shape.im = 0.27015;
+	cam->dist = 1.0;
+	cam->offset.x = 0.0;
+	cam->offset.y = 0.0;
+	cam->colour.r = 16;
+	cam->colour.g = 52;
+	cam->colour.b = 166;
+	cam->mode = 4;
+	cam->shape.re = -0.7;
+	cam->shape.im = 0.27015;
+	cam->max_iter = 1000;
 	return (0);
 }

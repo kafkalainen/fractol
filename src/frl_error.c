@@ -6,13 +6,13 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 16:38:23 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/01 15:14:35 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/15 12:52:15 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
 
-int frl_error(char *message)
+int		frl_error(char *message)
 {
 	ft_putendl_fd(message, 2);
 	return (1);

@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   frl_handle_keypress.c                              :+:      :+:    :+:   */
+/*   frl_handle_key.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/15 08:43:38 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/10 16:39:52 by jnivala          ###   ########.fr       */
+/*   Created: 2020/12/15 12:59:31 by jnivala           #+#    #+#             */
+/*   Updated: 2020/12/15 12:59:49 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "frl.h"
 
-int frl_handle_keypress(int keycode, t_vars *vars)
+int frl_handle_key(int keycode, t_vars *vars)
 {
 	if (vars && keycode == ESC)
 		vars = frl_clean(&vars);

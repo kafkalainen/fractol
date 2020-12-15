@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 11:53:34 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/10 09:32:46 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/15 11:43:20 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ int		frl_draw_fractal(t_cam *cam, t_data *data, char *str)
 		return (0);
 	} else if (ft_strequ("julia", str)) {
 		frl_paint_current_fractal(data, cam, &frl_julia);
+		frl_draw_menu(data, g42_rgb_to_hex(cam->colour));
+		return (0);
+	} else if (ft_strequ("burningship", str)) {
+		frl_paint_current_fractal(data, cam, &frl_burningship);
 		frl_draw_menu(data, g42_rgb_to_hex(cam->colour));
 		return (0);
 	} else {

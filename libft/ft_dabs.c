@@ -1,32 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   g42_mod_vec.c                                      :+:      :+:    :+:   */
+/*   ft_dabs.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/22 16:36:22 by jnivala           #+#    #+#             */
-/*   Updated: 2020/10/28 15:46:02 by jnivala          ###   ########.fr       */
+/*   Created: 2020/12/15 11:46:00 by jnivala           #+#    #+#             */
+/*   Updated: 2020/12/15 11:46:45 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "g42.h"
-
-void		g42_mod_vec(t_map *map, void (*f)(t_vec3*, t_vec3), t_vec3 mod)
+double		ft_dabs(double i)
 {
-	size_t	i;
-	size_t	len;
-
-	i = 0;
-	len = (size_t)map->pts;
-	if (map != 0)
-	{
-		while (len)
-		{
-			f(&map->proj[i], mod);
-			i++;
-			len--;
-		}
-	}
-	return ;
+	if (i < 0.0)
+		return (-i);
+	else
+		return (i);
 }

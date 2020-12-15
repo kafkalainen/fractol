@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   g42_rotate_y_axis.c                                :+:      :+:    :+:   */
+/*   frl_usage.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/20 13:21:37 by jnivala           #+#    #+#             */
-/*   Updated: 2020/10/30 18:40:22 by jnivala          ###   ########.fr       */
+/*   Created: 2020/12/15 11:21:14 by jnivala           #+#    #+#             */
+/*   Updated: 2020/12/15 13:01:09 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "g42.h"
-#include "math.h"
+#include "frl.h"
 
-void	g42_rotate_y_axis(t_vec3 *vec, double angle)
+int		frl_usage(void)
 {
-	t_m4x4	m;
-	double	c;
-	double	s;
-
-	c = cos(angle * (PI / 180));
-	s = sin(angle * (PI / 180));
-	m = (t_m4x4)
-	{{
-		{ c, 0, -s, 0},
-		{ 0, 1, 0, 0},
-		{ s, 0, c, 0},
-		{ 0, 0, 0, 1},
-	}};
-	*vec = g42_multi_vec_matrix(vec, &m);
+	ft_putendl_fd("Please provide a valid set. ./fractol <fractalname>", 1);
+	ft_putendl_fd("These are:", 1);
+	ft_putendl_fd("julia", 1);
+	ft_putendl_fd("mandelbrot", 1);
+	ft_putendl_fd("burningship", 1);
+	ft_putendl_fd("You can also write multiple ones ie. julia mandelbrot", 1);
+	return (EXIT_SUCCESS);
 }
