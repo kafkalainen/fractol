@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 14:42:54 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/15 12:24:52 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/15 21:40:22 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	frl_draw_title(t_data *data, t_uv coord)
 {
-	data->text_size = 10;
+	data->text_size = 7;
 	g42_str_pxl(data, coord, "Fract'ol");
 }

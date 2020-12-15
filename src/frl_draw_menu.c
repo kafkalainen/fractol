@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 14:53:34 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/15 14:25:47 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/15 21:43:26 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int		frl_draw_menu(t_data *data, int colour)
 
 	instructions.u = 20;
 	instructions.v = 40;
-	title.u = WIN_W / 2 - 200;
+	title.u = WIN_W / 2 - 150;
 	title.v = MENU_HEIGHT / 2 - 35;
 	pixel.v = 0;
 	while (pixel.v < MENU_HEIGHT)
