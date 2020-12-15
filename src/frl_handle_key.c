@@ -6,14 +6,14 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 12:59:31 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/15 12:59:49 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/15 14:38:51 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "frl.h"
 
-int frl_handle_key(int keycode, t_vars *vars)
+int		frl_handle_key(int keycode, t_vars *vars)
 {
 	if (vars && keycode == ESC)
 		vars = frl_clean(&vars);

@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 16:32:21 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/15 13:13:54 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/15 14:30:28 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@
 # define WIN_H 1080
 # define MENU_HEIGHT 140
 # define BUFF_SIZE 1024
-# define MAX_ITER 1000
 # define MAX_THREADS 25
 # include "g42.h"
 # include <string.h>

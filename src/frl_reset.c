@@ -6,14 +6,12 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 10:35:51 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/15 13:09:26 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/15 13:53:26 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "frl.h"
 #include "../mlx_linux/mlx.h"
-#include <stdlib.h>
-#include "../libft/libft.h"
 
 int		frl_reset(int buttoncode, t_vars *vars)
 {
@@ -21,9 +19,8 @@ int		frl_reset(int buttoncode, t_vars *vars)
 	vars->data->img = mlx_new_image(vars->mlx, WIN_W, WIN_H);
 	vars->data->addr = mlx_get_data_addr(vars->data->img, &vars->data->bpp,
 		&vars->data->llen, &vars->data->endian);
-	if (buttoncode == KEY_4) {
+	if (buttoncode == KEY_4)
 		frl_init_camera(&vars->cur);
-	}
 	frl_draw_fractal(&vars->cur, vars->data, vars->set);
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->data->img, 0, 0);
 	return (0);

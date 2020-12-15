@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 11:33:59 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/15 11:55:03 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/15 14:33:15 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	frl_burningship(t_data *data, t_uv screen, t_cam *cam)
 	i = 0;
 	c = frl_normalize_coordinates(screen.u, screen.v, cam);
 	new = c;
-	while (new.re * new.re + new.im * new.im  < 4.0 && i < MAX_ITER)
+	while (new.re * new.re + new.im * new.im < 4.0 && i < cam->max_iter)
 	{
 		temp.re = new.re * new.re - new.im * new.im + c.re;
 		new.im = ft_dabs(2.0 * new.re * new.im) + c.im;

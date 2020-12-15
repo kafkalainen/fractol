@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 12:20:07 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/15 12:05:04 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/15 14:41:23 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ int		frl_init_camera(t_cam *cam)
 	cam->mode = 4;
 	cam->shape.re = -0.7;
 	cam->shape.im = 0.27015;
-	cam->max_iter = 1000;
+	cam->max_iter = 100;
 	return (0);
 }

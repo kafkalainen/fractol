@@ -6,13 +6,13 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 14:53:34 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/15 13:07:48 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/15 14:25:47 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "frl.h"
 
-int frl_draw_menu(t_data *data, int colour)
+int		frl_draw_menu(t_data *data, int colour)
 {
 	t_uv pixel;
 	t_uv instructions;

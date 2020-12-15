@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 11:30:09 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/10 11:10:18 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/15 14:33:05 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void		frl_mandelbrot(t_data *data, t_uv screen, t_cam *cam)
 	new.one.im = 0.0;
 	new.sq.re = 0.0;
 	new.sq.im = 0.0;
-	while (new.sq.re + new.sq.im <= 4.0 && i < 1000)
+	while (new.sq.re + new.sq.im < 4.0 && i < cam->max_iter)
 	{
 		new.one.im = 2.0 * new.one.re * new.one.im + c.im;
 		new.one.re = new.sq.re - new.sq.im + c.re;

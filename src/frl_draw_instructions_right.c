@@ -6,13 +6,13 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 07:01:40 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/15 09:47:44 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/15 14:27:22 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "g42.h"
 
-void frl_draw_instructions_right(t_data *data, t_uv coord)
+void	frl_draw_instructions_right(t_data *data, t_uv coord)
 {
 	g42_str_pxl(data, coord, "Press 1 to change colour mode");
 	coord.v += 7 * 2;

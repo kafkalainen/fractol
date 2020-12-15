@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 15:39:56 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/15 13:07:00 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/15 13:49:02 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 #include <stdlib.h>
 #include "../libft/libft.h"
 
-static int		frl_colour_mode_switch(int i) {
+static int		frl_colour_mode_switch(int i)
+{
 	if (i == 1)
 		return (2);
 	else if (i == 2)
@@ -34,9 +35,8 @@ int				frl_change_colour_mode(int buttoncode, t_vars *vars)
 	vars->data->img = mlx_new_image(vars->mlx, WIN_W, WIN_H);
 	vars->data->addr = mlx_get_data_addr(vars->data->img, &vars->data->bpp,
 		&vars->data->llen, &vars->data->endian);
-	if (buttoncode == KEY_1) {
+	if (buttoncode == KEY_1)
 		vars->cur.mode = frl_colour_mode_switch(vars->cur.mode);
-	}
 	frl_draw_fractal(&vars->cur, vars->data, vars->set);
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->data->img, 0, 0);
 	return (0);

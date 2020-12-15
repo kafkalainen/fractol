@@ -6,13 +6,13 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 08:48:55 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/15 12:47:29 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/15 14:29:51 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "frl.h"
 
-static int		frl_lin_map_colour(int i, int g)
+static int		frl_lin_map_colour(int i, int g, int max_iter)
 {
 	t_rgb	c;
 	int		new_c;
@@ -20,7 +20,7 @@ static int		frl_lin_map_colour(int i, int g)
 	t_bound	x2;
 
 	x1.lower = 0.0;
-	x1.upper = MAX_ITER;
+	x1.upper = max_iter;
 	x2.lower = 0.0;
 	x2.upper = 255.0;
 	c.r = g42_linear_mapping(i, x1, x2);
@@ -51,7 +51,7 @@ int				frl_colour_scheme(int i, t_cam *cam)
 			return (black);
 	}
 	else if (cam->mode == 4)
-		return (frl_lin_map_colour(i, cam->colour.g));
+		return (frl_lin_map_colour(i, cam->colour.g, cam->max_iter));
 	else
 		return (black);
 	return (black);
