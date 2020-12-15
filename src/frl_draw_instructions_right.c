@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 07:01:40 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/10 10:56:52 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/15 09:47:44 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ void frl_draw_instructions_right(t_data *data, t_uv coord)
 	coord.v += 7 * 2;
 	g42_str_pxl(data, coord, "Press 3 to reset colour");
 	coord.v += 7 * 2;
-	g42_str_pxl(data, coord, "Press 3 to reset all");
+	g42_str_pxl(data, coord, "Press 4 to reset all");
 	coord.v += 7 * 2;
 }

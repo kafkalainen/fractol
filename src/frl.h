@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 16:32:21 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/10 16:38:06 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/15 10:35:19 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,9 +70,13 @@ int			frl_handle_buttonpress(int buttoncode, int x, int y, t_vars *vars);
 
 int			frl_handle_keypress(int keycode, t_vars *vars);
 
+int			frl_handle_movement(int x, int y, t_vars *vars);
+
 int			frl_init_camera(t_cam *cur);
 
 t_vars		**frl_init_vars(int argc);
+
+int			frl_init_windows(t_vars **vars, int *windows, char **argv, int argc);
 
 void		frl_paint_current_fractal(t_data *data, t_cam *cam, void (*f)(t_data*, t_uv, t_cam*));
 

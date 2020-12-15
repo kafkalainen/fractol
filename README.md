@@ -22,8 +22,7 @@ The latest repository of the school's MinilibX can be found here. Note, that lat
 
 ### To-do
 - List of available parameters.
-- Init vars has allocated memory, it needs to be freed.
-
+- Fix the instructions: Add number four and check that all the stuff are there.
 ### Checklist
 
 - Norminette shows no errors

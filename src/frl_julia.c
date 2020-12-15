@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 11:14:18 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/10 11:10:30 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/15 10:24:11 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ void	frl_julia(t_data *data, t_uv screen, t_cam *cam)
 	int				i;
 
 	i = 0;
-	c.re = -0.7;
-	c.im = 0.27015;
+	c = cam->shape;
 	new = frl_normalize_coordinates(screen.u, screen.v, cam);
 	while (new.re * new.re + new.im * new.im  <= 4.0 && i < MAX_ITER)
 	{

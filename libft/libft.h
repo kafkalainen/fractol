@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/04 14:35:57 by jnivala           #+#    #+#             */
-/*   Updated: 2020/10/30 10:50:01 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/15 10:19:48 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,11 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+typedef struct		s_complex {
+	double			re;
+	double			im;
+}					t_complex;
+
 typedef const char	t_c_char;
 
 char				***ft_3dstrarrdel(char ****a3d, size_t z, size_t y);
@@ -28,6 +33,9 @@ int					ft_atoi(const char *nptr);
 int					ft_atoi_base(const char *nptr, int base);
 int					ft_abs(int i);
 void				ft_bzero(void *s, size_t n);
+double				ft_cabs(t_complex c);
+t_complex			ft_cadd(t_complex x, t_complex y);
+t_complex			ft_cmultiply(t_complex x, t_complex y);
 size_t				ft_count_wrds(const char *s, int d);
 int					ft_isalpha(int c);
 int					ft_isalnum(int c);

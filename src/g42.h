@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 08:32:27 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/10 21:54:19 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/15 10:22:25 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@
 # define PI 3.14159265
 # include <string.h>
 # include <pthread.h>
+# include "libft.h"
 
 enum	e_colour {
 	lightpink = 0xffb6c1,
@@ -248,11 +249,6 @@ typedef struct	s_uv {
 	double		s_scale;
 }				t_uv;
 
-typedef struct	s_complex {
-	double		re;
-	double		im;
-}				t_complex;
-
 typedef struct	s_dual {
 	t_complex	one;
 	t_complex	sq;
@@ -319,6 +315,7 @@ typedef struct	s_camera
 	t_vec3		offset;
 	t_rgb		colour;
 	int			mode;
+	t_complex	shape;
 }				t_cam;
 
 typedef struct	s_data
@@ -349,12 +346,6 @@ typedef struct	s_vars {
 	int			index;
 	int			*window_count;
 }				t_vars;
-
-t_complex		g42_cadd(t_complex x, t_complex y);
-
-double			g42_cabs(t_complex c);
-
-t_complex		g42_cmultiply(t_complex x, t_complex y);
 
 int				g42_create_trgb(int t, int r, int g, int b);
 

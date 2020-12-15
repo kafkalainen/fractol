@@ -6,7 +6,7 @@
 #    By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/03 09:44:44 by jnivala           #+#    #+#              #
-#    Updated: 2020/12/10 15:09:35 by jnivala          ###   ########.fr        #
+#    Updated: 2020/12/15 10:45:59 by jnivala          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,9 +24,6 @@ MLX = $(mlx_dir)libmlx.a
 
 SRC_LIST = \
 	main.c\
-	g42_cabs.c\
-	g42_cadd.c\
-	g42_cmultiply.c\
 	g42_get_transparency.c\
 	g42_get_blue.c\
 	g42_get_green.c\
@@ -59,7 +56,6 @@ SRC_LIST = \
 	g42_trgb_to_hex.c\
 	g42_c_grad.c\
 	g42_scale_y.c\
-	g42_lerp.c\
 	g42_hsv_to_rgb.c\
 	g42_rgb_to_hsv.c\
 	g42_rgb_to_hex.c\
@@ -77,8 +73,10 @@ SRC_LIST = \
 	frl_error.c\
 	frl_handle_buttonpress.c\
 	frl_handle_keypress.c\
+	frl_handle_movement.c\
 	frl_init_camera.c\
 	frl_init_vars.c\
+	frl_init_windows.c\
 	frl_julia.c\
 	frl_mandelbrot.c\
 	frl_normalize_coordinates.c\
@@ -98,10 +96,10 @@ OBJ = $(SRC:$S%=$O%.o)
 RM = /bin/rm -f
 RMDIR = /bin/rmdir
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror -O3
 INCLUDES = $(addprefix -I,$(include_dirs))
 
-.PHONY: all clean fclean re debug
+.PHONY: all clean fclean re
 
 all: $(NAME)
 
@@ -137,7 +135,3 @@ fclean: clean
 	$(RM) $(LIBFT)
 
 re: fclean all
-
-debug: $(MLX) $(objects_dir) $(OBJ)
-	make -C $(libft_dir) fclean && make debug -C $(libft_dir)
-	$(CC) $(OBJ) -Lmlx_linux -lmlx -L$(INCLIB) -Llibft/ -lft -Imlx_linux -lXext -lX11 -lm -lz -o $@

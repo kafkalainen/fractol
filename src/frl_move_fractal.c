@@ -6,13 +6,12 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 17:58:36 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/10 15:02:46 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/15 10:05:41 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "frl.h"
 #include "../mlx_linux/mlx.h"
-#include "stdio.h"
 
 int		frl_move_fractal(int keycode, t_vars *vars)
 {

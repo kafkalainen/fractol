@@ -1,15 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   g42_lerp.c                                         :+:      :+:    :+:   */
+/*   ft_cabs.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/02 13:52:10 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/02 13:52:50 by jnivala          ###   ########.fr       */
+/*   Created: 2020/12/15 10:13:15 by jnivala           #+#    #+#             */
+/*   Updated: 2020/12/15 10:14:00 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-double g42_lerp(double v0, double v1, double t) {
-	return (1 - t) * v0 + t * v1;
+
+#include "libft.h"
+
+double	ft_cabs(t_complex c)
+{
+	return (ft_sqrt((c.re * c.re) + (c.im * c.im)));
 }
