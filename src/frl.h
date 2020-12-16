@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 16:32:21 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/16 11:31:30 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/16 16:22:41 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,4 +107,5 @@ int			frl_validate_sets(int argc, char **argv);
 
 int			frl_mutate_iterations(int buttoncode, t_vars *vars);
 int			frl_int_clean(t_vars **vars);
+int			frl_handle_enter_window(t_vars *vars);
 #endif

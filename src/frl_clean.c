@@ -6,17 +6,18 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 17:10:09 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/16 14:05:58 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/16 15:39:30 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "frl.h"
 #include <stdlib.h>
-#include "g42.h"
 #include "../libft/libft.h"
 #include "../mlx_linux/mlx.h"
 
 t_vars		*frl_clean(t_vars **vars)
 {
+	mlx_loop_hook((*vars)->mlx, frl_image_loop, NULL);
 	*(*vars)->window_count = *(*vars)->window_count - 1;
 	mlx_destroy_image((*vars)->mlx, (*vars)->data->img);
 	mlx_destroy_window((*vars)->mlx, (*vars)->win);

@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 08:32:27 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/16 14:53:13 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/16 15:28:35 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -334,10 +334,6 @@ typedef struct	s_vars {
 	int			index;
 	int			*window_count;
 }				t_vars;
-
-typedef struct	s_windows {
-	t_vars		*vars;
-}				t_windows;
 
 int				g42_create_trgb(int t, int r, int g, int b);
 

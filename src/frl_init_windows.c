@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/11 08:43:07 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/16 15:20:44 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/16 16:16:50 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int		frl_init_windows(t_vars **v, int *windows, char **argv, int argc)
 		mlx_hook(v[i]->win, KEYPRESS, KEYPRESSMASK, frl_handle_key, v[i]);
 		mlx_hook(v[i]->win, BTNPRESS, BTNPRESSMASK, frl_handle_btn, v[i]);
 		mlx_hook(v[i]->win, MTNNOTIFY, PTRMTNMASK, frl_handle_mov, v[i]);
+		mlx_hook(v[i]->win, FOCUSIN, FOCUSCHANGEMASK, frl_handle_enter_window, v[i]);
 		i++;
 	}
 	return (EXIT_SUCCESS);

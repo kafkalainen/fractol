@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 14:57:10 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/16 15:20:26 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/16 15:30:10 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int		frl_image_loop(t_vars *vars)
 		if (vars->cur.change == 1)
 		{
 			frl_draw_fractal(&vars->cur, vars->data, vars->set);
-			mlx_put_image_to_window(vars->mlx, vars->win, vars->data->img, 0, 0);
+			mlx_put_image_to_window(vars->mlx, vars->win, vars->data->img,
+				0, 0);
 			vars->cur.change = 0;
 		}
 	}
