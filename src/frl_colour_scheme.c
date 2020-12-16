@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 08:48:55 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/15 21:25:24 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/16 18:39:45 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ static int		frl_lin_map_colour(int i, int g, int max_iter)
 
 int				frl_colour_scheme(int i, t_cam *cam)
 {
-	t_rgb	rgb;
+	t_hsv	hsv;
 
 	if (cam->mode == 1)
 	{
-		rgb.r = i % 256;
-		rgb.g = cam->colour.g;
-		rgb.b = cam->colour.b;
-		return (g42_rgb_to_hex(g42_hsv_to_rgb(g42_rgb_to_hsv(rgb))));
+		hsv.h = i % 360;
+		hsv.s = 1;
+		hsv.v = 1;
+		return (g42_rgb_to_hex(g42_hsv_to_rgb(hsv)));
 	}
 	else if (cam->mode == 2)
 		return (g42_get_colours(i));
@@ -51,7 +51,7 @@ int				frl_colour_scheme(int i, t_cam *cam)
 			return (black);
 	}
 	else if (cam->mode == 4)
-		return (frl_lin_map_colour(i, cam->colour.g, cam->max_iter));
+		return (frl_lin_map_colour(i, cam->colour.b, cam->max_iter));
 	else
 		return (black);
 	return (black);

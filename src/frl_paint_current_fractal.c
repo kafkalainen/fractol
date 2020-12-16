@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 09:47:50 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/16 16:38:53 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/16 18:48:11 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static void	*frl_paint_area(void *args)
 	while (current != arg->tid[index])
 		index++;
 	screen.v = index * WIN_H / MAX_THREADS + MENU_HEIGHT;
-	limit = (index + 1) * WIN_H / MAX_THREADS  + MENU_HEIGHT;
+	limit = (index + 1) * WIN_H / MAX_THREADS + MENU_HEIGHT;
 	while (screen.v < limit)
 	{
 		screen.u = 0;

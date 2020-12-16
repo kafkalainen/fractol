@@ -6,7 +6,7 @@
 #    By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/03 09:44:44 by jnivala           #+#    #+#              #
-#    Updated: 2020/12/16 16:00:44 by jnivala          ###   ########.fr        #
+#    Updated: 2020/12/16 18:46:12 by jnivala          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,7 +72,7 @@ SRC_LIST = \
 	frl_usage.c\
 	frl_validate_sets.c\
 	frl_zoom_fractal.c\
-	frl_handle_enter_window.c\
+	frl_handle_focus.c\
 
 HEADERS = $(addprefix $S,\
 		frl.h\

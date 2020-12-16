@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 08:32:27 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/16 15:28:35 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/16 18:15:04 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -274,11 +274,9 @@ typedef struct	s_hsv {
 }				t_hsv;
 
 typedef struct	s_col_trans {
-	double		hh;
-	double		p;
-	double		q;
-	double		t;
-	double		ff;
+	double		c;
+	double		m;
+	double		x;
 }				t_col_trans;
 
 typedef struct	s_bound {

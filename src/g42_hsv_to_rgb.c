@@ -6,107 +6,81 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 12:40:05 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/08 11:00:05 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/16 18:27:29 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "g42.h"
+#include <math.h>
 
-static t_rgb		g42_if_black(t_hsv in, t_rgb out)
+static t_rgb		g42_first_half_colours(t_hsv hsv, t_col_trans col)
 {
-	out.r = in.v;
-	out.g = in.v;
-	out.b = in.v;
-	return (out);
-}
+	t_rgb		rgb;
 
-static t_col_trans	g42_assign_temp(long i, t_hsv in, t_col_trans col)
-{
-	col.ff = col.hh - i;
-	col.p = in.v * (1.0 - in.s);
-	col.q = in.v * (1.0 - (in.s * col.ff));
-	col.t = in.v * (1.0 - (in.s * (1.0 - col.ff)));
-	return (col);
-}
-
-static t_rgb		g42_first_half_colours(long i, t_hsv in, t_col_trans col)
-{
-	t_rgb out;
-
-	if (i == 0)
+	if (hsv.h >= 0.0 && hsv.h < 60.0)
 	{
-		out.r = in.v;
-		out.g = col.t;
-		out.b = col.p;
-		return (out);
+		rgb.r = (int)((col.c + col.m) * 255);
+		rgb.g = (int)((col.x + col.m) * 255);
+		rgb.b = 0;
 	}
-	else if (i == 1)
+	else if (hsv.h >= 60.0 && hsv.h < 120.0)
 	{
-		out.r = col.q;
-		out.g = in.v;
-		out.b = col.p;
-		return (out);
+		rgb.r = (int)((col.x + col.m) * 255);
+		rgb.g = (int)((col.c + col.m) * 255);
+		rgb.b = 0;
 	}
 	else
 	{
-		out.r = col.p;
-		out.g = in.v;
-		out.b = col.t;
-		return (out);
+		rgb.r = 0;
+		rgb.g = (int)((col.c + col.m) * 255);
+		rgb.b = (int)((col.x + col.m) * 255);
 	}
+	return (rgb);
 }
 
-static t_rgb		g42_second_half_colours(long i, t_hsv in, t_col_trans col)
+static t_rgb		g42_second_half_colours(t_hsv hsv, t_col_trans col)
 {
-	t_rgb out;
+	t_rgb		rgb;
 
-	if (i == 3)
+	if (hsv.h >= 180.0 && hsv.h < 240.0)
 	{
-		out.r = col.p;
-		out.g = col.q;
-		out.b = in.v;
-		return (out);
+		rgb.r = 0;
+		rgb.g = (int)((col.x + col.m) * 255);
+		rgb.b = (int)((col.c + col.m) * 255);
 	}
-	else if (i == 4)
+	else if (hsv.h >= 240.0 && hsv.h < 300.0)
 	{
-		out.r = col.t;
-		out.g = col.p;
-		out.b = in.v;
-		return (out);
+		rgb.r = (int)((col.x + col.m) * 255);
+		rgb.g = 0;
+		rgb.b = (int)((col.c + col.m) * 255);
 	}
 	else
 	{
-		out.r = in.v;
-		out.g = col.p;
-		out.b = col.q;
-		return (out);
+		rgb.r = (int)((col.c + col.m) * 255);
+		rgb.g = 0;
+		rgb.b = (int)((col.x + col.m) * 255);
 	}
+	return (rgb);
 }
 
-t_rgb				g42_hsv_to_rgb(t_hsv in)
+t_rgb				g42_hsv_to_rgb(t_hsv hsv)
 {
-	t_col_trans		col;
-	long			i;
-	t_rgb			out;
+	t_rgb		rgb;
+	t_col_trans	cmx;
 
-	if (in.s <= 0.0)
-	{
-		return (g42_if_black(in, out));
-	}
-	col.hh = in.h;
-	col.hh = col.hh >= 360.0 ? 0.0 : col.hh;
-	col.hh /= 60.0;
-	i = (long)col.hh;
-	col = g42_assign_temp(i, in, col);
-	if (i == 0 || i == 1 || i == 2)
-		return (out = g42_first_half_colours(i, in, col));
-	else if (i == 3 || i == 4 || i == 5)
-		return (out = g42_second_half_colours(i, in, col));
-	else
-	{
-		out.r = in.v;
-		out.g = col.p;
-		out.b = col.q;
-	}
-	return (out);
+	rgb.r = 0;
+	rgb.g = 0;
+	rgb.b = 0;
+	cmx.c = hsv.s * hsv.v;
+	cmx.x = cmx.c * (1 - fabs(fmod(hsv.h / 60.0, 2.0) - 1));
+	cmx.m = hsv.v - cmx.c;
+	if (hsv.h > 360.0 || hsv.h < 0.0
+	|| hsv.s > 1.0 || hsv.s < 0.0
+	|| hsv.v > 1.0 || hsv.v < 0.0)
+		return (rgb);
+	if (hsv.h >= 0.0 && hsv.h < 180.0)
+		rgb = g42_first_half_colours(hsv, cmx);
+	if (hsv.h >= 180.0 && hsv.h < 360.0)
+		rgb = g42_second_half_colours(hsv, cmx);
+	return (rgb);
 }

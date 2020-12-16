@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 12:15:10 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/08 10:30:16 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/16 18:38:01 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,34 @@
 
 static double		g42_ismax(double r, double g, double b)
 {
-	if (r >= g && r >= b)
-		return (r);
-	else if (g >= r && g >= b)
-		return (g);
-	else if (b >= r && b >= g)
-		return (b);
+	double temp;
+
+	temp = 0;
+	if (r > g)
+		temp = r;
 	else
-		return (r);
+		temp = g;
+	if (temp > b)
+		temp = temp;
+	else
+		temp = b;
+	return (temp);
 }
 
 static double		g42_ismin(double r, double g, double b)
 {
-	if (r <= g && r <= b)
-		return (r);
-	else if (g <= r && g <= b)
-		return (g);
-	else if (b <= r && b <= g)
-		return (b);
+	double temp;
+
+	temp = 0;
+	if (r < g)
+		temp = r;
 	else
-		return (r);
+		temp = g;
+	if (temp < b)
+		temp = temp;
+	else
+		temp = b;
+	return (temp);
 }
 
 static t_hsv		g42_if_smaller(t_hsv out)
