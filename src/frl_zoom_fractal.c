@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 15:39:56 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/15 20:42:20 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/16 15:24:56 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,6 @@ int				frl_zoom_fractal(int buttoncode, int x, int y, t_vars *vars)
 {
 	t_complex	complex;
 
-	mlx_destroy_image(vars->mlx, vars->data->img);
-	vars->data->img = mlx_new_image(vars->mlx, WIN_W, WIN_H);
-	vars->data->addr = mlx_get_data_addr(vars->data->img, &vars->data->bpp,
-		&vars->data->llen, &vars->data->endian);
 	if (buttoncode == ZOOM_IN || buttoncode == ZOOM_OUT)
 	{
 		complex = frl_normalize_coordinates(x, y, &vars->cur);
@@ -30,9 +26,8 @@ int				frl_zoom_fractal(int buttoncode, int x, int y, t_vars *vars)
 			vars->cur.dist *= 1.1;
 		else
 			vars->cur.dist *= 0.9;
+		vars->cur.zoom_change = 1;
 		vars->cur.change = 1;
 	}
-	frl_draw_fractal(&vars->cur, vars->data, vars->set);
-	mlx_put_image_to_window(vars->mlx, vars->win, vars->data->img, 0, 0);
 	return (0);
 }

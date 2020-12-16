@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 08:32:27 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/15 20:09:17 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/16 14:53:13 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -295,6 +295,15 @@ typedef struct	s_camera
 	t_complex	shape;
 	int			max_iter;
 	int			change;
+	int			move_change;
+	int			mode_change;
+	int			colour_change;
+	int			shape_change;
+	int			zoom_change;
+	int			reset_change;
+	int			reset_colour;
+	int			iter_change;
+	int			exit;
 }				t_cam;
 
 typedef struct	s_data
@@ -325,6 +334,10 @@ typedef struct	s_vars {
 	int			index;
 	int			*window_count;
 }				t_vars;
+
+typedef struct	s_windows {
+	t_vars		*vars;
+}				t_windows;
 
 int				g42_create_trgb(int t, int r, int g, int b);
 

@@ -6,15 +6,17 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 12:59:31 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/15 20:14:57 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/16 15:15:52 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "frl.h"
+#include "../mlx_linux/mlx.h"
 
 int		frl_handle_key(int keycode, t_vars *vars)
 {
+
 	if (vars && keycode == ESC)
 		vars = frl_clean(&vars);
 	if (vars && (keycode == DOWN || keycode == UP
@@ -30,5 +32,7 @@ int		frl_handle_key(int keycode, t_vars *vars)
 		frl_reset_colour(keycode, vars);
 	if (vars && keycode == KEY_4)
 		frl_reset(keycode, vars);
+	if (vars && keycode == KEY_W)
+		mlx_loop_hook(vars->mlx, frl_image_loop, vars);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 08:38:48 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/15 12:24:30 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/16 13:22:49 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void		g42_str_pxl(t_data *data, t_uv coord, char *str)
 	int		c;
 	int		*letter;
 
-	letter = (int *)malloc(sizeof(*letter) * 36);
+	letter = (int*)malloc(sizeof(*letter) * 36);
 	while (*str != '\0')
 	{
 		c = ft_toupper(*str);
@@ -72,5 +72,5 @@ void		g42_str_pxl(t_data *data, t_uv coord, char *str)
 		coord.u += 5 * data->text_size;
 		str++;
 	}
-	ft_memdel((void *)&letter);
+	ft_memdel((void*)&letter);
 }
