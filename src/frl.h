@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 16:32:21 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/15 21:37:19 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/16 08:23:21 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@
 # define EXIT_SUCCESS 0
 # define EXIT_FAILURE 1
 # define INVALID_CHARACTERS 2
-# define WIN_W 1000
-# define WIN_H 750
-# define MENU_HEIGHT 120
+# define WIN_W 1200
+# define WIN_H 1000
+# define MENU_HEIGHT 100
 # define BUFF_SIZE 1024
 # define MAX_THREADS 25
 # include "g42.h"
