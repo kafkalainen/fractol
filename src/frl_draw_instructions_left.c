@@ -6,13 +6,14 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 14:18:09 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/15 21:46:36 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/17 12:09:58 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../libft/libft.h"
 #include "g42.h"
 
-void	frl_draw_instructions_left(t_data *data, t_uv coord)
+void	frl_draw_instructions_left(t_data *data, t_uv coord, t_cam *cam)
 {
 	data->text_size = 2;
 	g42_str_pxl(data, coord, "Press arrow keys to move around");
@@ -21,6 +22,9 @@ void	frl_draw_instructions_left(t_data *data, t_uv coord)
 	coord.v += 7 * 2;
 	g42_str_pxl(data, coord, "Use mouse to mutate Julia set");
 	coord.v += 7 * 2;
-	g42_str_pxl(data, coord, "Use keys Q and E to mutate number of iterations");
+	g42_str_pxl(data, coord, "Use keys Q and E manipulate iterations");
 	coord.v += 7 * 2;
+	g42_str_pxl(data, coord, "Current iterations: ");
+	coord.u += 5 * 2 * 20;
+	g42_str_pxl(data, coord, ft_itoa(cam->max_iter));
 }

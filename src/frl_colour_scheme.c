@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 08:48:55 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/16 18:39:45 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/17 12:00:35 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,9 @@ int				frl_colour_scheme(int i, t_cam *cam)
 
 	if (cam->mode == 1)
 	{
-		hsv.h = i % 360;
+		if (i >= cam->max_iter)
+			return (black);
+		hsv.h = ((int)cam->colour.b + i) % 360;
 		hsv.s = 1;
 		hsv.v = 1;
 		return (g42_rgb_to_hex(g42_hsv_to_rgb(hsv)));

@@ -6,12 +6,11 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 15:39:56 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/16 15:24:56 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/17 09:59:51 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "frl.h"
-#include "../mlx_linux/mlx.h"
 
 int				frl_zoom_fractal(int buttoncode, int x, int y, t_vars *vars)
 {

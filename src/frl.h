@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 16:32:21 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/16 18:45:56 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/17 12:06:09 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,11 @@ int			frl_draw_background(t_data *data);
 
 int			frl_draw_fractal(t_cam *cam, t_data *data, char *str);
 
-int			frl_draw_instructions_left(t_data *data, t_uv coord);
+int			frl_draw_instructions_left(t_data *data, t_uv coord, t_cam *cam);
 
 int			frl_draw_instructions_right(t_data *data, t_uv coord);
 
-int			frl_draw_menu(t_data *data, int colour);
+int			frl_draw_menu(t_data *data, int colour, t_cam *cam);
 
 void		frl_draw_title(t_data *data, t_uv coord);
 

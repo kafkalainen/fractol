@@ -6,14 +6,11 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 10:12:01 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/16 18:54:43 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/17 09:57:01 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "frl.h"
-#include "../mlx_linux/mlx.h"
-#include <stdlib.h>
-#include "../libft/libft.h"
 
 int		frl_reset_colour(int buttoncode, t_vars *vars)
 {

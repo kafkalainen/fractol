@@ -6,14 +6,11 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 15:39:56 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/16 15:17:09 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/17 10:00:39 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "frl.h"
-#include "../mlx_linux/mlx.h"
-#include <stdlib.h>
-#include "../libft/libft.h"
 
 static int		frl_colour_mode_switch(int i)
 {
@@ -33,7 +30,6 @@ int				frl_change_colour_mode(int buttoncode, t_vars *vars)
 {
 	if (buttoncode == KEY_1)
 	{
-		vars->cur.mode_change = 1;
 		vars->cur.change = 1;
 		vars->cur.mode = frl_colour_mode_switch(vars->cur.mode);
 	}

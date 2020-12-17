@@ -21,8 +21,8 @@ The latest repository of the school's MinilibX can be found here. Note, that lat
 ![Example of the Mandelbrot](example.png)
 
 ### To-do
-- List of available parameters.
-- Fix the instructions: Add number four and check that all the stuff are there.
+- Add more fractals.
+-
 ### Checklist
 
 - Norminette shows no errors
