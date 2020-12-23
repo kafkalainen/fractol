@@ -6,7 +6,7 @@
 #    By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/03 09:44:44 by jnivala           #+#    #+#              #
-#    Updated: 2020/12/16 18:46:12 by jnivala          ###   ########.fr        #
+#    Updated: 2020/12/23 13:26:03 by jnivala          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,6 +73,10 @@ SRC_LIST = \
 	frl_validate_sets.c\
 	frl_zoom_fractal.c\
 	frl_handle_focus.c\
+	frl_newton.c\
+	frl_nova.c\
+	frl_magnet.c\
+	frl_tricorn.c\
 
 HEADERS = $(addprefix $S,\
 		frl.h\

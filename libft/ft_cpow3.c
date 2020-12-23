@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   frl_normalize_coordinates.c                        :+:      :+:    :+:   */
+/*   ft_cpow3.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/10 09:43:01 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/23 08:37:42 by jnivala          ###   ########.fr       */
+/*   Created: 2020/12/17 15:59:47 by jnivala           #+#    #+#             */
+/*   Updated: 2020/12/23 10:09:03 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "frl.h"
+#include "libft.h"
 
-t_complex	frl_normalize_coordinates(int x, int y, t_cam *cam)
+t_complex		ft_cpow3(t_complex z)
 {
-	t_complex	c;
+	t_complex	result;
 
-	c.re = cam->mult.x * (x - 0.5 * WIN_W) / (0.5 * WIN_W * cam->dist)
-		+ cam->offset.x;
-	c.im = cam->mult.y * ((y - MENU_HEIGHT) - 0.5 * (WIN_H - MENU_HEIGHT)) /
-	(0.5 * (WIN_H - MENU_HEIGHT) * cam->dist) + cam->offset.y;
-	return (c);
+	result = ft_cmultiply(z, z);
+	result = ft_cmultiply(result, z);
+	return (result);
 }

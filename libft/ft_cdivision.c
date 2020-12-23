@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   frl_normalize_coordinates.c                        :+:      :+:    :+:   */
+/*   ft_cdivision.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/10 09:43:01 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/23 08:37:42 by jnivala          ###   ########.fr       */
+/*   Created: 2020/12/17 13:08:04 by jnivala           #+#    #+#             */
+/*   Updated: 2020/12/23 11:39:08 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "frl.h"
+#include "libft.h"
 
-t_complex	frl_normalize_coordinates(int x, int y, t_cam *cam)
+t_complex	ft_cdivision(t_complex x, t_complex y)
 {
-	t_complex	c;
+	t_complex	z;
+	double		temp;
+	double		div_x;
+	double		div_y;
 
-	c.re = cam->mult.x * (x - 0.5 * WIN_W) / (0.5 * WIN_W * cam->dist)
-		+ cam->offset.x;
-	c.im = cam->mult.y * ((y - MENU_HEIGHT) - 0.5 * (WIN_H - MENU_HEIGHT)) /
-	(0.5 * (WIN_H - MENU_HEIGHT) * cam->dist) + cam->offset.y;
-	return (c);
+	z.re = 0.0;
+	z.im = 0.0;
+	// if (y.re == 0 && y.im == 0)
+	// 	return (z);
+	div_x = x.re * y.re + x.im * y.im;
+	div_y = x.im * y.re - x.re * y.im;
+	z.re = y.re * y.re + y.im * y.im;
+	temp = div_x / z.re;
+	z.im = div_y / z.re;
+	z.re = temp;
+	return (z);
 }

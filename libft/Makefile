@@ -6,7 +6,7 @@
 #    By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/26 13:08:18 by jnivala           #+#    #+#              #
-#    Updated: 2020/12/15 11:46:57 by jnivala          ###   ########.fr        #
+#    Updated: 2020/12/17 17:11:26 by jnivala          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,6 +89,13 @@ SRC = \
 ./ft_pow_of_2.c\
 ./ft_sqrt.c\
 ./ft_dabs.c\
+./ft_cdivision.c\
+./ft_cderivative.c\
+./ft_cmultiply.c\
+./ft_cpow3.c\
+./ft_csub.c\
+./ft_cabs.c\
+./ft_cadd.c\
 
 INC = ./libft.h ./get_next_line.h
 

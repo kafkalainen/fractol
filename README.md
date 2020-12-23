@@ -22,7 +22,14 @@ The latest repository of the school's MinilibX can be found here. Note, that lat
 
 ### To-do
 - Add more fractals.
--
+- Newton fractal
+- use real julia scale [-1.5, 1.5]
+- use real mandelbrot scale [-2.5, 1]
+- use real mandelbrot scale [-2.5, 1] in Newton
+- Pheonix fractal x [-1.8, 1.8], [-1.35, 1.35]
+- Nova fractal x [-2.0, 2.0], [-1.5, 1.5]
+- Rationial map fractal x [-1.8, 1.8], [-1.35, 1.35]
+- Magnet
 ### Checklist
 
 - Norminette shows no errors
@@ -66,3 +73,4 @@ Bonus
 - How to Render a Fractal, Fast [Link](https://blog.bede.io/how-to-render-a-fractal-fast/)
 - About one person's endeavour to create Mandelbrot on stupidly slow machine [Link](
 http://cowlark.com/2018-05-26-bogomandel/index.html)
+- Equations for Nova and Magnet [Link](https://fractalfoundation.org/OFC/OFC-5-5.html)

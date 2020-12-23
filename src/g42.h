@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 08:32:27 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/16 18:15:04 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/23 08:16:52 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -262,15 +262,15 @@ typedef struct	s_colour
 }				t_colour;
 
 typedef struct	s_rgb {
-	double r;
-	double g;
-	double b;
+	double		r;
+	double		g;
+	double		b;
 }				t_rgb;
 
 typedef struct	s_hsv {
-	double h;
-	double s;
-	double v;
+	double		h;
+	double		s;
+	double		v;
 }				t_hsv;
 
 typedef struct	s_col_trans {
@@ -293,14 +293,7 @@ typedef struct	s_camera
 	t_complex	shape;
 	int			max_iter;
 	int			change;
-	int			move_change;
-	int			mode_change;
-	int			colour_change;
-	int			shape_change;
-	int			zoom_change;
-	int			reset_change;
-	int			reset_colour;
-	int			iter_change;
+	t_vec3		mult;
 	int			exit;
 }				t_cam;
 

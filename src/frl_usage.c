@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 11:21:14 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/15 13:01:09 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/23 13:27:18 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@ int		frl_usage(void)
 	ft_putendl_fd("julia", 1);
 	ft_putendl_fd("mandelbrot", 1);
 	ft_putendl_fd("burningship", 1);
+	ft_putendl_fd("newton", 1);
+	ft_putendl_fd("magnet", 1);
+	ft_putendl_fd("tricorn", 1);
 	ft_putendl_fd("You can also write multiple ones ie. julia mandelbrot", 1);
 	return (EXIT_SUCCESS);
 }

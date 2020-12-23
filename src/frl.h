@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 16:32:21 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/17 12:06:09 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/23 13:25:35 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,66 +46,41 @@
 # include <string.h>
 
 void		frl_burningship(t_data *data, t_uv screen, t_cam *cam);
-
 int			frl_change_colour_mode(int buttoncode, t_vars *vars);
-
 int			frl_change_colours(int buttoncode, t_vars *vars);
-
 t_vars		*frl_clean(t_vars **vars);
-
 int			frl_draw_background(t_data *data);
-
 int			frl_draw_fractal(t_cam *cam, t_data *data, char *str);
-
 int			frl_draw_instructions_left(t_data *data, t_uv coord, t_cam *cam);
-
 int			frl_draw_instructions_right(t_data *data, t_uv coord);
-
 int			frl_draw_menu(t_data *data, int colour, t_cam *cam);
-
 void		frl_draw_title(t_data *data, t_uv coord);
-
 int			frl_error(char *message);
-
 int			frl_handle_btn(int buttoncode, int x, int y, t_vars *vars);
-
 int			frl_handle_key(int keycode, t_vars *vars);
-
 int			frl_handle_mov(int x, int y, t_vars *vars);
-
 int			frl_image_loop(t_vars *vars);
-
 int			frl_init_camera(t_cam *cam);
-
 t_vars		**frl_init_vars(int argc);
-
 int			frl_init_windows(t_vars **vars, int *windows, char **argv,
 			int argc);
-
 void		frl_paint_current_fractal(t_data *data, t_cam *cam,
 			void (*f)(t_data*, t_uv, t_cam*));
-
 void		frl_mandelbrot(t_data *data, t_uv screen, t_cam *cam);
-
 t_complex	frl_normalize_coordinates(int x, int y, t_cam *cam);
-
 void		frl_julia(t_data *data, t_uv screen, t_cam *cam);
-
+void		frl_nova(t_data *data, t_uv screen, t_cam *cam);
 int			frl_move_fractal(int keycode, t_vars *vars);
-
 int			frl_colour_scheme(int i, t_cam *cam);
-
 int			frl_zoom_fractal(int buttoncode, int x, int y, t_vars *vars);
-
 int			frl_reset_colour(int buttoncode, t_vars *vars);
-
 int			frl_reset(int buttoncode, t_vars *vars);
-
 int			frl_usage(void);
-
 int			frl_validate_sets(int argc, char **argv);
-
 int			frl_mutate_iterations(int buttoncode, t_vars *vars);
 int			frl_int_clean(t_vars **vars);
 int			frl_handle_focus(t_vars *vars);
+void		frl_newton(t_data *data, t_uv screen, t_cam *cam);
+void		frl_magnet(t_data *data, t_uv screen, t_cam *cam);
+void		frl_tricorn(t_data *data, t_uv screen, t_cam *cam);
 #endif
