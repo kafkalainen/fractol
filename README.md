@@ -7,25 +7,25 @@
 ### Goal of the project
 
 • Software offers at least 3 different types of fractals - Julia - Mandelbrot
-• Julia set will vary only with the mouse. As for the other types of fractal,
-I used same logic in order to keep UI intuitive.
+• Julia set will vary only with the mouse. As for the other types of fractal, I used same logic in order to keep UI intuitive.
 • The mouse wheel zooms in and out, almost infinitely. This is the very principle of fractals.
-• I use a few colors to show the depth of each fractal.
+• I use a few colors to show the depth of each fractal. There are 4 colourmodes available (blue and yellow, hue, iterations as colours and black and white)
 • A parameter is passed on the command line to define what type of fractal will be
 viewed. If no parameter is provided, or if the parameter is invalid, the program
-displays a list of available parameters and exits properly.
-
+displays a list of available parameters and exits.
+  ./fractal "name"
 The latest repository of the school's MinilibX can be found here. Note, that latest version has a function that releases mlx_init allocated memory properly, so I highly recommend only to use the latest version.
 [Link](https://github.com/42Paris/minilibx-linux)
 
 ![Example of the Mandelbrot](example.png)
 
 ### To-do
-- Add more fractals.
-- Newton fractal
 - use real julia scale [-1.5, 1.5]
 - use real mandelbrot scale [-2.5, 1]
 - use real mandelbrot scale [-2.5, 1] in Newton
+- 3.5 / 2
+- 1.75 / 1.3125
+- 2.00 / 1.50
 - Pheonix fractal x [-1.8, 1.8], [-1.35, 1.35]
 - Nova fractal x [-2.0, 2.0], [-1.5, 1.5]
 - Rationial map fractal x [-1.8, 1.8], [-1.35, 1.35]

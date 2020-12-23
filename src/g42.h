@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 08:32:27 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/23 08:16:52 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/23 18:42:33 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -284,7 +284,7 @@ typedef struct	s_bound {
 	double		lower;
 }				t_bound;
 
-typedef struct	s_camera
+typedef struct	s_cam
 {
 	double		dist;
 	t_vec3		offset;
@@ -295,6 +295,7 @@ typedef struct	s_camera
 	int			change;
 	t_vec3		mult;
 	int			exit;
+	int			toggle;
 }				t_cam;
 
 typedef struct	s_data

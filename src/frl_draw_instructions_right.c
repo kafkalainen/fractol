@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 07:01:40 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/15 14:27:22 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/23 18:49:26 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,7 @@ void	frl_draw_instructions_right(t_data *data, t_uv coord)
 	g42_str_pxl(data, coord, "Press 3 to reset colour");
 	coord.v += 7 * 2;
 	g42_str_pxl(data, coord, "Press 4 to reset all");
+	coord.v += 7 * 2;
+	g42_str_pxl(data, coord, "Press W to stop mouse in Julia");
 	coord.v += 7 * 2;
 }

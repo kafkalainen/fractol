@@ -6,7 +6,7 @@
 #    By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/03 09:44:44 by jnivala           #+#    #+#              #
-#    Updated: 2020/12/23 13:26:03 by jnivala          ###   ########.fr        #
+#    Updated: 2020/12/23 18:46:15 by jnivala          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,6 +77,7 @@ SRC_LIST = \
 	frl_nova.c\
 	frl_magnet.c\
 	frl_tricorn.c\
+	frl_reset_julia.c\
 
 HEADERS = $(addprefix $S,\
 		frl.h\

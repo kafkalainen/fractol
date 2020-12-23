@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 16:32:21 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/23 13:25:35 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/23 18:47:00 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ int			frl_move_fractal(int keycode, t_vars *vars);
 int			frl_colour_scheme(int i, t_cam *cam);
 int			frl_zoom_fractal(int buttoncode, int x, int y, t_vars *vars);
 int			frl_reset_colour(int buttoncode, t_vars *vars);
+int			frl_reset_julia(int buttoncode, t_vars *vars);
 int			frl_reset(int buttoncode, t_vars *vars);
 int			frl_usage(void);
 int			frl_validate_sets(int argc, char **argv);

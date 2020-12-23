@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 11:30:09 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/15 14:33:05 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/23 18:01:10 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void		frl_mandelbrot(t_data *data, t_uv screen, t_cam *cam)
 
 	i = 0;
 	c = frl_normalize_coordinates(screen.u, screen.v, cam);
+	c.re -= 0.5;
 	new.one.re = 0.0;
 	new.one.im = 0.0;
 	new.sq.re = 0.0;

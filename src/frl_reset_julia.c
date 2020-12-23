@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   frl_normalize_coordinates.c                        :+:      :+:    :+:   */
+/*   frl_reset_julia.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/10 09:43:01 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/23 18:18:23 by jnivala          ###   ########.fr       */
+/*   Created: 2020/12/23 18:38:36 by jnivala           #+#    #+#             */
+/*   Updated: 2020/12/23 18:49:56 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "frl.h"
+#include "../mlx_linux/mlx.h"
 
-t_complex	frl_normalize_coordinates(int x, int y, t_cam *cam)
+int		frl_reset_julia(int buttoncode, t_vars *vars)
 {
-	t_complex	c;
-
-	c.re = cam->mult.x * (x - 0.5 * WIN_W) / (0.5 * WIN_W * cam->dist)
-		+ cam->offset.x;
-	c.im = cam->mult.y * ((y - MENU_HEIGHT) - 0.5 * (WIN_H - MENU_HEIGHT)) /
-	(0.5 * (WIN_H - MENU_HEIGHT) * cam->dist) + cam->offset.y;
-	return (c);
+	if (buttoncode == KEY_W)
+	{
+		if (!vars->cur.toggle)
+		{
+			mlx_hook(vars->win, MTNNOTIFY, PTRMTNMASK, frl_handle_mov, NULL);
+			vars->cur.toggle = 1;
+			vars->cur.change = 1;
+		}
+		else
+		{
+			mlx_hook(vars->win, MTNNOTIFY, PTRMTNMASK, frl_handle_mov, vars);
+			vars->cur.toggle = 0;
+		}
+	}
+	return (0);
 }
+

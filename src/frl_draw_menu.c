@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 14:53:34 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/17 12:10:43 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/23 18:51:46 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int		frl_draw_menu(t_data *data, int colour, t_cam *cam)
 		pixel.v++;
 	}
 	frl_draw_instructions_left(data, instructions, cam);
-	instructions.u = (int)(WIN_W / 4 * 3);
+	instructions.u = (int)(WIN_W / 4 * 3) - 20;
 	instructions.v = 10;
 	frl_draw_instructions_right(data, instructions);
 	frl_draw_title(data, title);
