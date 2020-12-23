@@ -6,15 +6,13 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 13:30:55 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/23 15:35:59 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/23 15:49:31 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "frl.h"
 #include "../libft/libft.h"
 
-/*(z ** 2 + C - 1)*/
 static t_complex	frl_dividee(t_complex z, t_complex c)
 {
 	t_complex	result;
@@ -26,7 +24,6 @@ static t_complex	frl_dividee(t_complex z, t_complex c)
 	return (result);
 }
 
-/*(2 * z + C - 2)*/
 static t_complex	frl_divisor(t_complex z, t_complex c)
 {
 	z.re = 2 * z.re;
@@ -37,7 +34,6 @@ static t_complex	frl_divisor(t_complex z, t_complex c)
 	return (z);
 }
 
-/*(z ** 2 + C - 1) / (2 * z + C - 2)**2*/
 void				frl_magnet(t_data *data, t_uv screen, t_cam *cam)
 {
 	t_complex	z;
@@ -55,7 +51,8 @@ void				frl_magnet(t_data *data, t_uv screen, t_cam *cam)
 		z = ft_cdivision(frl_dividee(z, c), frl_divisor(z, c));
 		if (z.re * z.re + z.im * z.im > 16.0)
 		{
-			g42_mlx_pixel_put(data, screen.u, screen.v, frl_colour_scheme(i, cam));
+			g42_mlx_pixel_put(data, screen.u, screen.v,
+				frl_colour_scheme(i, cam));
 			return ;
 		}
 		i++;

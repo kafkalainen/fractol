@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/17 13:08:04 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/23 11:39:08 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/23 17:51:24 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ t_complex	ft_cdivision(t_complex x, t_complex y)
 
 	z.re = 0.0;
 	z.im = 0.0;
-	// if (y.re == 0 && y.im == 0)
-	// 	return (z);
+	if (y.re == 0 && y.im == 0)
+	 	return (z);
 	div_x = x.re * y.re + x.im * y.im;
 	div_y = x.im * y.re - x.re * y.im;
 	z.re = y.re * y.re + y.im * y.im;
