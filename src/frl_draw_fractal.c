@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 11:53:34 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/23 18:28:22 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/27 15:47:18 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,15 @@ int			frl_draw_fractal(t_cam *cam, t_data *data, char *str)
 		frl_paint_current_fractal(data, cam, &frl_burningship);
 	else if (ft_strequ("newton", str))
 		frl_paint_current_fractal(data, cam, &frl_newton);
-	else if (ft_strequ("nova", str))
-		frl_paint_current_fractal(data, cam, &frl_nova);
 	else if (ft_strequ("magnet", str))
 		frl_paint_current_fractal(data, cam, &frl_magnet);
 	else if (ft_strequ("tricorn", str))
 		frl_paint_current_fractal(data, cam, &frl_tricorn);
+	else if (ft_strequ("thorn", str))
+		frl_paint_current_fractal(data, cam, &frl_thorn);
+	else if (ft_strequ("biomorph", str))
+		frl_paint_current_fractal(data, cam, &frl_biomorph);
 	else
-	{
-		ft_putendl_fd("ERROR: Don't have that set.", 2);
-		ft_putendl_fd(str, 2);
 		return (1);
-	}
 	return (0);
 }

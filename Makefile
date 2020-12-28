@@ -6,7 +6,7 @@
 #    By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/03 09:44:44 by jnivala           #+#    #+#              #
-#    Updated: 2020/12/23 18:46:15 by jnivala          ###   ########.fr        #
+#    Updated: 2020/12/27 16:30:31 by jnivala          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,21 +24,12 @@ MLX = $(mlx_dir)libmlx.a
 
 SRC_LIST = \
 	main.c\
-	g42_get_transparency.c\
-	g42_get_blue.c\
-	g42_get_green.c\
-	g42_get_red.c\
-	g42_create_trgb.c\
-	g42_invert_trgb.c\
 	g42_mlx_pixel_put.c\
 	g42_solid_square.c\
 	g42_str_pxl.c\
 	g42_pxl_alphabet.c\
 	g42_pxl_numbers.c\
-	g42_hex_to_trgb.c\
-	g42_trgb_to_hex.c\
 	g42_hsv_to_rgb.c\
-	g42_rgb_to_hsv.c\
 	g42_rgb_to_hex.c\
 	g42_get_colours.c\
 	g42_linear_mapping.c\
@@ -74,10 +65,11 @@ SRC_LIST = \
 	frl_zoom_fractal.c\
 	frl_handle_focus.c\
 	frl_newton.c\
-	frl_nova.c\
 	frl_magnet.c\
 	frl_tricorn.c\
 	frl_reset_julia.c\
+	frl_thorn.c\
+	frl_biomorph.c\
 
 HEADERS = $(addprefix $S,\
 		frl.h\

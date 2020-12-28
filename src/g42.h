@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 08:32:27 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/23 18:42:33 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/27 16:30:14 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -327,18 +327,6 @@ typedef struct	s_vars {
 	int			*window_count;
 }				t_vars;
 
-int				g42_create_trgb(int t, int r, int g, int b);
-
-int				g42_get_transparency(int trgb);
-
-int				g42_get_red(int trgb);
-
-int				g42_get_green(int trgb);
-
-int				g42_get_blue(int trgb);
-
-int				g42_invert_trgb(int t, int r, int g, int b);
-
 void			g42_mlx_pixel_put(t_data *data, int x, int y, int color);
 
 void			g42_solid_square(t_data *data, t_uv offset, int c, int s);
@@ -349,15 +337,9 @@ t_pxl_c			g42_pxl_alphabet(int l, int b, int c);
 
 t_pxl_c			g42_pxl_numbers(int l, int b, int c);
 
-t_colour		g42_hex_to_trgb(int trgb);
-
-int				g42_trgb_to_hex(t_colour trgb);
-
 double			g42_linear_mapping(double val, t_bound x1, t_bound x2);
 
 t_rgb			g42_hsv_to_rgb(t_hsv in);
-
-t_hsv			g42_rgb_to_hsv(t_rgb in);
 
 int				g42_rgb_to_hex(t_rgb rgb);
 

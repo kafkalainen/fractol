@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 18:38:36 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/23 18:49:56 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/28 10:49:30 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,3 @@ int		frl_reset_julia(int buttoncode, t_vars *vars)
 	}
 	return (0);
 }
-

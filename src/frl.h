@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 16:32:21 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/23 18:47:00 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/24 02:42:04 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,6 @@ int			frl_handle_focus(t_vars *vars);
 void		frl_newton(t_data *data, t_uv screen, t_cam *cam);
 void		frl_magnet(t_data *data, t_uv screen, t_cam *cam);
 void		frl_tricorn(t_data *data, t_uv screen, t_cam *cam);
+void		frl_thorn(t_data *data, t_uv screen, t_cam *cam);
+void		frl_biomorph(t_data *data, t_uv screen, t_cam *cam);
 #endif

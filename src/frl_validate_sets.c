@@ -6,7 +6,7 @@
 /*   By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 10:54:04 by jnivala           #+#    #+#             */
-/*   Updated: 2020/12/23 17:29:41 by jnivala          ###   ########.fr       */
+/*   Updated: 2020/12/28 10:50:31 by jnivala          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,10 @@ int				frl_validate_sets(int argc, char **argv)
 			ft_strcmp(argv[i], "mandelbrot") != 0 &&
 			ft_strcmp(argv[i], "burningship") != 0 &&
 			ft_strcmp(argv[i], "newton") != 0 &&
-			ft_strcmp(argv[i], "nova") != 0 &&
 			ft_strcmp(argv[i], "magnet") != 0 &&
-			ft_strcmp(argv[i], "tricorn") != 0)
+			ft_strcmp(argv[i], "tricorn") != 0 &&
+			ft_strcmp(argv[i], "thorn") != 0 &&
+			ft_strcmp(argv[i], "biomorph") != 0)
 		{
 			ft_putstr_fd("ERROR: Given parameter is not valid set\n", 2);
 			ft_putstr_fd(argv[i], 2);
