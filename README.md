@@ -53,7 +53,7 @@ displays a list of available parameters and exits.
 #### Tricorn
 ![Tricorn](resources/tricorn.png)
 
-Implemented following bonuses:
+### Implemented following bonuses:
 - Total of 8 different fractals.
 - Four different colour modes.
 - Ability to switch main colour.
@@ -69,7 +69,7 @@ Implemented following bonuses:
 ![Black-White](resources/black-white.png)
 #### Colours as iterations
 ![Colours as iterations](resources/colour-iterations.png)
-#### HSV to RGB
+#### Modulo 360 HSV colour
 ![HSV to RGB](resources/colour-shift.png)
 
 ### Reasonings
@@ -81,7 +81,7 @@ Implemented following bonuses:
 
 - MinilibX documentation by Codam students [Link](https://harm-smits.github.io/42docs/libs/minilibx/getting_started.html#compilation-on-linux)
 - Neener's tutorial how to use MinilibX [Link](https://gontjarow.github.io/MiniLibX/)
-- Mandelbrot Plotting algorithms [Link](https://en.wikipedia.org/wiki/Plotting_algorithms_for_the_Mandelbrot_set)
+- Mandelbrot plotting algorithms [Link](https://en.wikipedia.org/wiki/Plotting_algorithms_for_the_Mandelbrot_set)
 - C plotting algorithm [Link](https://jonisalonen.com/2013/lets-draw-the-mandelbrot-set/)
 - Linear interpolation [Link](https://en.wikipedia.org/wiki/Linear_interpolation)
 - Illianois University examples on pthread [Link](https://courses.engr.illinois.edu/cs241/fa2010/ppt/10-pthread-examples.pdf)
