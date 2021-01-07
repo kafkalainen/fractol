@@ -2,7 +2,7 @@
 
 ## Small fractal exploration program for 42 curriculum at Hive Helsinki
 
-![Points](points.png)
+![Points](resources/points.png)
 
 ### Goal of the project
 
@@ -17,14 +17,21 @@ displays a list of available parameters and exits.
 The latest repository of the school's MinilibX can be found here. Note, that latest version has a function that releases mlx_init allocated memory properly, so I highly recommend only to use the latest version.
 [Link](https://github.com/42Paris/minilibx-linux)
 
-![Example of the Mandelbrot](example.png)
-
 ### Results of the project
 • Software offers total of 8 different fractals; Julia, Mandelbrot, Burningship, Newton, Magnet, Tricorn, Thorn and Biomorph.
 • Learnt about usage of complex numbers in computer graphics and practical use of fractals whilst scouring for information about fractals in general.
 • Learnt about multithreading and optimization ie. how multiplication, square roots and divisions impact on the overall performance of the program.
 • Gained deeper understanding about different colour scales (HSV vs. RGB) and how to switch between colours.
 • Got to think about user experience in C programs.
+
+![Mandelbrot](resources/mandelbrot.png)
+![Julia](resources/julia.png)
+![Burningship](resources/burningship.png)
+![Newton](resources/newton.png)
+![Magnet](resources/magnet.png)
+![Thorn](resources/thorn.png)
+![Biomorph](resources/biomorph.png)
+![Tricorn](resources/tricorn.png)
 
 Implemented following bonuses:
 • Total of 8 different fractals.
@@ -36,6 +43,11 @@ Implemented following bonuses:
 • Parallel computing using pthread.
 • Possibility to open up multiple windows with different fractals at the same time.
 
+![Blue-Yellow](resources/blue-yellow.png)
+![Black-White](resources/black-white.png)
+![Colours as iterations](resources/colour-iterations.png)
+![HSV to RGB](resources/colour-shift.png)
+
 ### Reasonings
 
 - I use g42 prefix for project files that I deem usable in other projects and frl to be project specific prefix.
@@ -44,14 +56,14 @@ Implemented following bonuses:
 ### Links
 
 - MinilibX documentation by Codam students [Link](https://harm-smits.github.io/42docs/libs/minilibx/getting_started.html#compilation-on-linux)
-- Neener's tutorial how to use MinilibX, and DDA algorithm. [Link](https://gontjarow.github.io/MiniLibX/)
+- Neener's tutorial how to use MinilibX [Link](https://gontjarow.github.io/MiniLibX/)
 - Mandelbrot Plotting algorithms [Link](https://en.wikipedia.org/wiki/Plotting_algorithms_for_the_Mandelbrot_set)
 - C plotting algorithm [Link](https://jonisalonen.com/2013/lets-draw-the-mandelbrot-set/)
 - Linear interpolation [Link](https://en.wikipedia.org/wiki/Linear_interpolation))
 - Illianois University examples on pthread [Link](https://courses.engr.illinois.edu/cs241/fa2010/ppt/10-pthread-examples.pdf)
 - Lode's Computer Graphics tutorial is a must read, it holds basically everything you need to get the basics of fractals. [Link](https://lodev.org/cgtutor/juliamandelbrot.html)
 - How to Render a Fractal, Fast [Link](https://blog.bede.io/how-to-render-a-fractal-fast/)
-- About one person's endeavour to create Mandelbrot on stupidly slow machine [Link](
+- About one person's endeavour to create Mandelbrot on stupidly slow machine is a good read/ [Link](
 http://cowlark.com/2018-05-26-bogomandel/index.html)
-- Equations for Nova and Magnet [Link](https://fractalfoundation.org/OFC/OFC-5-5.html)
-- Paul Bourke's page on Biomorph fractals [Link](http://paulbourke.net/fractals/biomorph/)
+- Equations for Nova and Magnet can be found here [Link](https://fractalfoundation.org/OFC/OFC-5-5.html)
+- Paul Bourke's presentation on Biomorph fractals and excellent pictures gives great ideas how to further develop code, and what kind of fractals are possible. [Link](http://paulbourke.net/fractals/biomorph/)
