@@ -6,23 +6,23 @@
 
 ### Goal of the project
 
-• Software offers at least 3 different types of fractals - Julia - Mandelbrot
-• Julia set will vary only with the mouse. As for the other types of fractal, I used same logic in order to keep UI intuitive.
-• The mouse wheel zooms in and out, almost infinitely. This is the very principle of fractals.
-• I use a few colors to show the depth of each fractal. There are 4 colourmodes available (blue and yellow, hue, iterations as colours and black and white)
-• A parameter is passed on the command line to define what type of fractal will be
+- Software offers at least 3 different types of fractals - Julia - Mandelbrot
+- Julia set will vary only with the mouse. As for the other types of fractal, I used same logic in order to keep UI intuitive.
+- The mouse wheel zooms in and out, almost infinitely. This is the very principle of fractals.
+- I use a few colors to show the depth of each fractal. There are 4 colourmodes available (blue and yellow, hue, iterations as colours and black and white)
+- A parameter is passed on the command line to define what type of fractal will be
 viewed. If no parameter is provided, or if the parameter is invalid, the program
 displays a list of available parameters and exits.
   ./fractal "name"
-The latest repository of the school's MinilibX can be found here. Note, that latest version has a function that releases mlx_init allocated memory properly, so I highly recommend only to use the latest version.
+- The latest repository of the school's MinilibX can be found here. Note, that latest version has a function that releases mlx_init allocated memory properly, so I highly recommend only to use the latest version.
 [Link](https://github.com/42Paris/minilibx-linux)
 
 ### Results of the project
-• Software offers total of 8 different fractals; Julia, Mandelbrot, Burningship, Newton, Magnet, Tricorn, Thorn and Biomorph.
-• Learnt about usage of complex numbers in computer graphics and practical use of fractals whilst scouring for information about fractals in general.
-• Learnt about multithreading and optimization ie. how multiplication, square roots and divisions impact on the overall performance of the program.
-• Gained deeper understanding about different colour scales (HSV vs. RGB) and how to switch between colours.
-• Got to think about user experience in C programs.
+- Software offers total of 8 different fractals; Julia, Mandelbrot, Burningship, Newton, Magnet, Tricorn, Thorn and Biomorph.
+- Learnt about usage of complex numbers in computer graphics and practical use of fractals whilst scouring for information about fractals in general.
+- Learnt about multithreading and optimization ie. how multiplication, square roots and divisions impact on the overall performance of the program.
+- Gained deeper understanding about different colour scales (HSV vs. RGB) and how to switch between colours.
+- Got to think about user experience in C programs.
 
 ![Mandelbrot](resources/mandelbrot.png)
 ![Julia](resources/julia.png)
@@ -34,14 +34,14 @@ The latest repository of the school's MinilibX can be found here. Note, that lat
 ![Tricorn](resources/tricorn.png)
 
 Implemented following bonuses:
-• Total of 8 different fractals.
-• Four different colour modes.
-• Ability to switch main colour.
-• Added manipulation of constant C where-ever appliable.
-• Zoom follows the mouse pointer.
-• It is possible to move around in the image by using arrowkeys.
-• Parallel computing using pthread.
-• Possibility to open up multiple windows with different fractals at the same time.
+- Total of 8 different fractals.
+- Four different colour modes.
+- Ability to switch main colour.
+- Added manipulation of constant C where-ever appliable.
+- Zoom follows the mouse pointer.
+- It is possible to move around in the image by using arrowkeys.
+- Parallel computing using pthread.
+- Possibility to open up multiple windows with different fractals at the same time.
 
 ![Blue-Yellow](resources/blue-yellow.png)
 ![Black-White](resources/black-white.png)
