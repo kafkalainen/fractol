@@ -24,13 +24,21 @@ displays a list of available parameters and exits.
 - Gained deeper understanding about different colour scales (HSV vs. RGB) and how to switch between colours.
 - Got to think about user experience in C programs.
 
+#### Mandelbrot
 ![Mandelbrot](resources/mandelbrot.png)
+#### Julia
 ![Julia](resources/julia.png)
+#### Burningship
 ![Burningship](resources/burningship.png)
+#### Newton
 ![Newton](resources/newton.png)
+#### Magnet
 ![Magnet](resources/magnet.png)
+#### Thorn
 ![Thorn](resources/thorn.png)
+#### Biomorph
 ![Biomorph](resources/biomorph.png)
+#### Tricorn
 ![Tricorn](resources/tricorn.png)
 
 Implemented following bonuses:
@@ -43,9 +51,13 @@ Implemented following bonuses:
 - Parallel computing using pthread.
 - Possibility to open up multiple windows with different fractals at the same time.
 
+#### Blue to Yellow linear mapping
 ![Blue-Yellow](resources/blue-yellow.png)
+#### Black and White
 ![Black-White](resources/black-white.png)
+#### Colours as iterations
 ![Colours as iterations](resources/colour-iterations.png)
+#### HSV to RGB
 ![HSV to RGB](resources/colour-shift.png)
 
 ### Reasonings
@@ -59,7 +71,7 @@ Implemented following bonuses:
 - Neener's tutorial how to use MinilibX [Link](https://gontjarow.github.io/MiniLibX/)
 - Mandelbrot Plotting algorithms [Link](https://en.wikipedia.org/wiki/Plotting_algorithms_for_the_Mandelbrot_set)
 - C plotting algorithm [Link](https://jonisalonen.com/2013/lets-draw-the-mandelbrot-set/)
-- Linear interpolation [Link](https://en.wikipedia.org/wiki/Linear_interpolation))
+- Linear interpolation [Link](https://en.wikipedia.org/wiki/Linear_interpolation)
 - Illianois University examples on pthread [Link](https://courses.engr.illinois.edu/cs241/fa2010/ppt/10-pthread-examples.pdf)
 - Lode's Computer Graphics tutorial is a must read, it holds basically everything you need to get the basics of fractals. [Link](https://lodev.org/cgtutor/juliamandelbrot.html)
 - How to Render a Fractal, Fast [Link](https://blog.bede.io/how-to-render-a-fractal-fast/)
