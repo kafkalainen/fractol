@@ -6,10 +6,10 @@
 
 ### Goal of the project
 
-- Software offers at least 3 different types of fractals - Julia - Mandelbrot
+- Software offers at least 3 different types of fractals.
 - Julia set will vary only with the mouse. As for the other types of fractal, I used same logic in order to keep UI intuitive.
-- The mouse wheel zooms in and out, almost infinitely. This is the very principle of fractals.
-- I use a few colors to show the depth of each fractal. There are 4 colourmodes available (blue and yellow, hue, iterations as colours and black and white)
+- The mouse wheel zooms in and out, almost infinitely.
+- Use some colour to show the depth of each fractal.
 - A parameter is passed on the command line to define what type of fractal will be
 viewed. If no parameter is provided, or if the parameter is invalid, the program
 displays a list of available parameters and exits.
@@ -23,6 +23,18 @@ displays a list of available parameters and exits.
 - Learnt about multithreading and optimization ie. how multiplication, square roots and divisions impact on the overall performance of the program.
 - Gained deeper understanding about different colour scales (HSV vs. RGB) and how to switch between colours.
 - Got to think about user experience in C programs.
+
+  Please provide a valid set. ./fractol "fractalname"
+  These are:
+  julia
+  mandelbrot
+  burningship
+  newton
+  magnet
+  tricorn
+  thorn
+  biomorph
+  You can also write multiple ones ie. julia mandelbrot
 
 #### Mandelbrot
 ![Mandelbrot](resources/mandelbrot.png)
