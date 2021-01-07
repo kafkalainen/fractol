@@ -6,7 +6,7 @@
 #    By: jnivala <jnivala@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/03 09:44:44 by jnivala           #+#    #+#              #
-#    Updated: 2020/12/28 12:34:42 by jnivala          ###   ########.fr        #
+#    Updated: 2021/01/07 09:17:10 by jnivala          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,8 +77,7 @@ HEADERS = $(addprefix $S,\
 	)
 SRC = $(addprefix $S, $(SRC_LIST))
 OBJ = $(SRC:$S%=$O%.o)
-RM = /bin/rm -f
-RMDIR = /bin/rmdir
+RM = /bin/rm -rf
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 INCLUDES = $(addprefix -I,$(include_dirs))
@@ -108,7 +107,7 @@ cleanobj:
 	$(RM) $(wildcard $(OBJ))
 
 cleanobjdir: cleanobj
-	$(RMDIR) $O
+	$(RM) $O
 
 clean: cleanobjdir
 	make -C $(mlx_dir) clean
