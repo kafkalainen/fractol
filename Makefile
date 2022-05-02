@@ -15,11 +15,11 @@ NAME = fractol
 S = src/
 O = obj/
 mlx_dir = mlx_linux/
-libft_dir = libft/
-LIBFT = $(libft_dir)libft.a
-include_dirs = libft /usr/include $(mlx_dir) $(source_dir)
-INC = /usr/include
-INCLIB = $(INC)/../lib
+libft_dir = libft
+LIBFT = $(libft_dir)/libft.a
+include_dirs = libft $(mlx_dir) $(source_dir)
+#INC = /usr/include
+#INCLIB = $(INC)/../lib
 MLX = $(mlx_dir)libmlx.a
 
 SRC_LIST = \
@@ -94,14 +94,19 @@ $(OBJ): | $O
 $(OBJ): $O%.o: $S% $(HEADERS)
 	$(CC) $(CFLAGS) -c $(INCLUDES) $< -o $@
 
+dependencies:
+	sudo apt-get install libx11-dev
+	sudo apt-get install libxext-dev
+	sudo apt-get install libbsd-dev
+
 $(LIBFT):
 	make -C $(libft_dir)
 
 $(MLX):
 	make -C $(mlx_dir)
 
-$(NAME): $(LIBFT) $(MLX) $(OBJ)
-	$(CC) $(OBJ) -Lmlx_linux -lmlx -L$(INCLIB) -Llibft/ -lft -Imlx_linux -lpthread -lXext -lX11 -lm -lz -o $@
+$(NAME): dependencies $(LIBFT) $(MLX) $(OBJ)
+	$(CC) $(OBJ) -Lmlx_linux -lmlx -Llibft -lft -Imlx_linux -lpthread -lXext -lX11 -lm -lz -o $@
 
 cleanobj:
 	$(RM) $(wildcard $(OBJ))
